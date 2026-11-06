@@ -12,39 +12,25 @@
 
 <style>
 :root{
-  --purple:#5428b5;
-  --violet:#9473ee;
-  --dark:#171321;
-  --light:#faf9ff;
-  --muted:#716d80;
-  --border:#e9e4f3;
-  --lav:#eee9ff;
+--purple:#5428b5;
+--violet:#9473ee;
+--dark:#171321;
+--light:#faf9ff;
+--muted:#716d80;
+--border:#e9e4f3;
+--lav:#eee9ff;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  background:var(--light);
-  color:var(--dark);
-  font-family:'DM Sans',sans-serif;
-  line-height:1.7;
-  overflow-x:hidden;
-}
+body{background:var(--light);color:var(--dark);font-family:'DM Sans',sans-serif;line-height:1.7;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
 button{font:inherit;cursor:pointer}
 .container{width:min(1200px,92%);margin:auto}
 h1,h2,h3{font-family:Manrope,sans-serif;line-height:1.2;letter-spacing:-1px}
 
 /* NAVIGATION */
-header{
-  position:sticky;top:0;z-index:100;
-  background:rgba(250,249,255,.94);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--border);
-}
-.nav{
-  min-height:82px;display:flex;
-  justify-content:space-between;align-items:center;gap:20px;
-}
+header{position:sticky;top:0;z-index:100;background:rgba(250,249,255,.94);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
+.nav{min-height:82px;display:flex;justify-content:space-between;align-items:center;gap:20px}
 .logo{display:flex;align-items:center;gap:10px}
 .logo svg{width:43px;height:43px}
 .logo-name{font:800 21px Manrope;letter-spacing:1px}
@@ -52,328 +38,133 @@ header{
 .navlinks{display:flex;gap:22px;align-items:center}
 .navlinks a{font-size:13px;font-weight:700;color:#666174;transition:.3s}
 .navlinks a:hover,.navlinks a.active{color:var(--purple)}
-.nav-btn{
-  background:var(--purple);color:white;
-  padding:12px 22px;border-radius:40px;
-  font-size:13px;font-weight:700;transition:.3s;
-}
+.nav-btn{background:var(--purple);color:white;padding:12px 22px;border-radius:40px;font-size:13px;font-weight:700;transition:.3s}
 .nav-btn:hover{background:#321477;transform:translateY(-3px)}
 .menu{display:none;background:none;border:0;font-size:25px;color:var(--purple)}
 
 /* HERO */
-.hero{
-  position:relative;overflow:hidden;
-  padding:90px 0 85px;
-  background:
-    radial-gradient(ellipse at 78% 10%,#e6dcff,transparent 42%),
-    linear-gradient(135deg,#faf9ff,#f4efff);
-}
-.hero-grid{
-  display:grid;grid-template-columns:1.05fr .95fr;
-  gap:55px;align-items:center;
-}
-.eyebrow{
-  color:var(--purple);font-size:11px;
-  letter-spacing:3px;font-weight:800;
-  text-transform:uppercase;margin-bottom:18px;
-}
-.hero h1{
-  font-size:clamp(45px,6vw,75px);
-  letter-spacing:-3px;margin-bottom:22px;
-}
-.gradient{
-  background:linear-gradient(100deg,#49219c,#a084f2);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-}
+.hero{position:relative;overflow:hidden;padding:90px 0 85px;background:radial-gradient(ellipse at 78% 10%,#e6dcff,transparent 42%),linear-gradient(135deg,#faf9ff,#f4efff)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center}
+.eyebrow{color:var(--purple);font-size:11px;letter-spacing:3px;font-weight:800;text-transform:uppercase;margin-bottom:18px}
+.hero h1{font-size:clamp(45px,6vw,75px);letter-spacing:-3px;margin-bottom:22px}
+.gradient{background:linear-gradient(100deg,#49219c,#a084f2);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero-copy{color:var(--muted);font-size:16px;max-width:560px}
 .hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
-.btn{
-  display:inline-block;padding:13px 23px;
-  background:var(--purple);color:white;
-  border-radius:40px;font-size:13px;font-weight:800;
-  transition:.3s;
-}
+.btn{display:inline-block;padding:13px 23px;background:var(--purple);color:white;border-radius:40px;font-size:13px;font-weight:800;transition:.3s}
 .btn:hover{transform:translateY(-4px);background:#321477;box-shadow:0 12px 28px #5428b533}
-.btn-outline{
-  display:inline-block;padding:12px 22px;
-  border:1px solid #d9ccef;color:var(--purple);
-  border-radius:40px;font-size:13px;font-weight:800;
-  background:white;transition:.3s;
-}
+.btn-outline{display:inline-block;padding:12px 22px;border:1px solid #d9ccef;color:var(--purple);border-radius:40px;font-size:13px;font-weight:800;background:white;transition:.3s}
 .btn-outline:hover{transform:translateY(-3px);border-color:var(--purple)}
 
-/* CREATIVE HERO VISUAL - NO ORBITS */
-.process-visual{
-  min-height:440px;position:relative;
-  display:flex;align-items:center;justify-content:center;
-  isolation:isolate;
-}
-.visual-panel{
-  width:100%;max-width:490px;min-height:385px;
-  border-radius:30px;padding:30px;
-  background:linear-gradient(145deg,#20172f,#35205e 65%,#52329a);
-  position:relative;overflow:hidden;
-  box-shadow:0 30px 70px #34205b35;
-}
-.visual-panel:before{
-  content:"";position:absolute;
-  width:240px;height:240px;
-  background:#9876ee22;
-  right:-80px;top:-80px;
-  transform:rotate(35deg);
-  border-radius:45px;
-}
-.visual-panel:after{
-  content:"";position:absolute;
-  width:180px;height:180px;
-  background:#ffffff09;
-  left:-90px;bottom:-90px;
-  transform:rotate(25deg);
-  border-radius:40px;
-}
-.visual-top{
-  position:relative;z-index:2;
-  display:flex;justify-content:space-between;
-  align-items:center;color:#d8cafa;
-  font-size:10px;letter-spacing:2px;font-weight:800;
-}
-.live-dot{
-  width:8px;height:8px;border-radius:50%;
-  background:#a9f2c4;display:inline-block;
-  margin-right:7px;box-shadow:0 0 15px #a9f2c4;
-  animation:blink 1.6s infinite;
-}
+/* HERO VISUAL */
+.process-visual{min-height:440px;position:relative;display:flex;align-items:center;justify-content:center;isolation:isolate}
+.visual-panel{width:100%;max-width:490px;min-height:385px;border-radius:30px;padding:30px;background:linear-gradient(145deg,#20172f,#35205e 65%,#52329a);position:relative;overflow:hidden;box-shadow:0 30px 70px #34205b35}
+.visual-panel:before{content:"";position:absolute;width:240px;height:240px;background:#9876ee22;right:-80px;top:-80px;transform:rotate(35deg);border-radius:45px}
+.visual-panel:after{content:"";position:absolute;width:180px;height:180px;background:#ffffff09;left:-90px;bottom:-90px;transform:rotate(25deg);border-radius:40px}
+.visual-top{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;color:#d8cafa;font-size:10px;letter-spacing:2px;font-weight:800}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#a9f2c4;display:inline-block;margin-right:7px;box-shadow:0 0 15px #a9f2c4;animation:blink 1.6s infinite}
 @keyframes blink{50%{opacity:.35;transform:scale(.7)}}
-.flow-stack{
-  position:relative;z-index:2;
-  display:grid;gap:12px;margin-top:35px;
-}
-.flow-step{
-  display:grid;grid-template-columns:42px 1fr auto;
-  align-items:center;gap:14px;
-  background:#ffffff12;border:1px solid #ffffff22;
-  border-radius:15px;padding:13px 15px;
-  color:white;backdrop-filter:blur(8px);
-  animation:slideIn .7s both;
-  transition:.3s;
-}
+.flow-stack{position:relative;z-index:2;display:grid;gap:12px;margin-top:35px}
+.flow-step{display:grid;grid-template-columns:42px 1fr auto;align-items:center;gap:14px;background:#ffffff12;border:1px solid #ffffff22;border-radius:15px;padding:13px 15px;color:white;backdrop-filter:blur(8px);animation:slideIn .7s both;transition:.3s}
 .flow-step:nth-child(2){margin-left:22px;animation-delay:.2s}
 .flow-step:nth-child(3){margin-left:44px;animation-delay:.4s}
 .flow-step:nth-child(4){margin-left:66px;animation-delay:.6s}
 .flow-step:hover{background:#ffffff25;transform:translateX(-6px)}
-.flow-step:nth-child(2):hover{transform:translateX(-6px)}
-.flow-step:nth-child(3):hover{transform:translateX(-6px)}
-.flow-step:nth-child(4):hover{transform:translateX(-6px)}
-@keyframes slideIn{
-  from{opacity:0;transform:translateX(35px)}
-  to{opacity:1;transform:translateX(0)}
-}
-.flow-num{
-  height:38px;width:38px;border-radius:12px;
-  display:grid;place-items:center;
-  background:#ffffff20;color:#e8dcff;
-  font:800 13px Manrope;
-}
+@keyframes slideIn{from{opacity:0;transform:translateX(35px)}to{opacity:1;transform:translateX(0)}}
+.flow-num{height:38px;width:38px;border-radius:12px;display:grid;place-items:center;background:#ffffff20;color:#e8dcff;font:800 13px Manrope}
 .flow-step strong{display:block;font:700 14px Manrope}
 .flow-step small{font-size:10px;color:#c8bddc}
 .flow-arrow{color:#cbb7ff;font-size:20px}
-.visual-bottom{
-  position:relative;z-index:2;
-  margin-top:24px;display:flex;justify-content:space-between;
-  color:#d8cafa;font-size:10px;letter-spacing:1px;
-}
-.visual-label{
-  position:absolute;z-index:3;
-  background:white;color:var(--purple);
-  border-radius:13px;padding:12px 16px;
-  font-size:11px;font-weight:800;
-  box-shadow:0 15px 35px #1b103c30;
-  animation:labelFloat 4s ease-in-out infinite;
-}
+.visual-bottom{position:relative;z-index:2;margin-top:24px;display:flex;justify-content:space-between;color:#d8cafa;font-size:10px;letter-spacing:1px}
+.visual-label{position:absolute;z-index:3;background:white;color:var(--purple);border-radius:13px;padding:12px 16px;font-size:11px;font-weight:800;box-shadow:0 15px 35px #1b103c30;animation:labelFloat 4s ease-in-out infinite}
 .visual-label.one{top:12px;right:-15px}
 .visual-label.two{bottom:5px;left:-18px;animation-delay:-2s}
-@keyframes labelFloat{
-  50%{transform:translateY(-9px) rotate(-2deg)}
-}
+@keyframes labelFloat{50%{transform:translateY(-9px) rotate(-2deg)}}
 
-/* INTRO */
+/* GENERAL SECTIONS */
 .section{padding:90px 0}
 .section-head{max-width:760px;margin-bottom:38px}
 .section-head h2{font-size:clamp(32px,4.5vw,49px);margin-bottom:15px}
 .section-head p{color:var(--muted);font-size:15px}
 .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-.intro-card{
-  background:white;border:1px solid var(--border);
-  border-radius:22px;padding:30px;
-  transition:.35s;
-}
+.intro-card{background:white;border:1px solid var(--border);border-radius:22px;padding:30px;transition:.35s}
 .intro-card:hover{transform:translateY(-6px);box-shadow:0 18px 45px #35205b12}
 .intro-card h3{font-size:21px;margin-bottom:12px}
 .intro-card p{font-size:14px;color:var(--muted)}
 .intro-index{font:800 12px Manrope;color:#9679d5;margin-bottom:22px}
 
 /* PROCESS */
-.process-section{
-  padding:90px 0;
-  background:linear-gradient(180deg,#f2edff,#faf9ff);
-}
-.process-list{display:grid;gap:18px}
-.process-card{
-  background:white;border:1px solid var(--border);
-  border-radius:24px;overflow:hidden;
-  transition:.35s;
-}
+.process-section{padding:90px 0;background:linear-gradient(180deg,#f2edff,#faf9ff)}
+.process-list{display:grid;gap:22px}
+.process-card{background:white;border:1px solid var(--border);border-radius:24px;overflow:hidden;transition:.35s;animation:cardAppear .7s both}
+.process-card:nth-child(2){animation-delay:.12s}
+.process-card:nth-child(3){animation-delay:.24s}
+.process-card:nth-child(4){animation-delay:.36s}
+@keyframes cardAppear{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
 .process-card:hover{border-color:#c7b5ec;box-shadow:0 18px 45px #35205b12}
-.process-card>summary{
-  list-style:none;cursor:pointer;
-  display:grid;grid-template-columns:85px 1fr 50px;
-  align-items:center;gap:22px;padding:28px 30px;
-}
+.process-card>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:85px 1fr 50px;align-items:center;gap:22px;padding:28px 30px}
 .process-card>summary::-webkit-details-marker{display:none}
-.stage-number{
-  width:70px;height:70px;border-radius:18px;
-  background:linear-gradient(140deg,#eee8ff,#f9f6ff);
-  display:grid;place-items:center;
-  color:var(--purple);font:800 23px Manrope;
-  transition:.4s;
-}
-.process-card[open] .stage-number{
-  background:var(--purple);color:white;
-  transform:rotate(-6deg) scale(1.05);
-}
-.stage-copy small{
-  display:block;color:var(--purple);
-  font-size:10px;letter-spacing:2px;font-weight:800;
-  margin-bottom:6px;
-}
+.stage-number{width:70px;height:70px;border-radius:18px;background:linear-gradient(140deg,#eee8ff,#f9f6ff);display:grid;place-items:center;color:var(--purple);font:800 23px Manrope;transition:.4s}
+.process-card[open] .stage-number{background:var(--purple);color:white;transform:rotate(-6deg) scale(1.05)}
+.stage-copy small{display:block;color:var(--purple);font-size:10px;letter-spacing:2px;font-weight:800;margin-bottom:6px}
 .stage-copy h3{font-size:25px;margin-bottom:7px}
 .stage-copy p{font-size:13px;color:var(--muted);max-width:700px}
-.stage-toggle{
-  width:42px;height:42px;border-radius:50%;
-  background:var(--lav);color:var(--purple);
-  display:grid;place-items:center;font-size:23px;
-  transition:.35s;
-}
-.process-card[open] .stage-toggle{
-  transform:rotate(45deg);background:var(--purple);color:white;
-}
-.stage-content{
-  border-top:1px solid var(--border);
-  padding:30px;
-  animation:reveal .45s ease;
-}
-@keyframes reveal{
-  from{opacity:0;transform:translateY(14px)}
-  to{opacity:1;transform:translateY(0)}
-}
-.stage-intro{
-  color:var(--muted);font-size:14px;
-  max-width:850px;margin-bottom:23px;
-}
-.detail-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.detail{
-  background:#fcfbff;border:1px solid var(--border);
-  border-radius:15px;overflow:hidden;
-  transition:.3s;
-}
-.detail:hover{border-color:#c8b7ed}
-.detail>summary{
-  list-style:none;cursor:pointer;
-  display:flex;justify-content:space-between;
-  gap:15px;align-items:center;
-  padding:16px 18px;font-size:13px;font-weight:800;
-}
+.stage-toggle{width:42px;height:42px;border-radius:50%;background:var(--lav);color:var(--purple);display:grid;place-items:center;font-size:23px;transition:.35s}
+.process-card[open] .stage-toggle{transform:rotate(45deg);background:var(--purple);color:white}
+.stage-content{border-top:1px solid var(--border);padding:30px;animation:reveal .45s ease}
+@keyframes reveal{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.stage-intro{color:var(--muted);font-size:14px;max-width:850px;margin-bottom:25px}
+
+/* 3-COLUMN EXPANDABLE OPTIONS */
+.detail-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.detail{background:#fcfbff;border:1px solid var(--border);border-radius:15px;overflow:hidden;transition:.35s;position:relative}
+.detail:hover{border-color:#bba7e7;transform:translateY(-4px);box-shadow:0 12px 28px #35205b10}
+.detail>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:12px;align-items:center;padding:17px 17px;font-size:13px;font-weight:800;min-height:65px}
 .detail>summary::-webkit-details-marker{display:none}
-.detail>summary:after{
-  content:"+";font-size:21px;color:var(--purple);
-  font-weight:400;transition:.25s;
-}
-.detail[open]>summary:after{content:"−"}
-.detail p{
-  padding:0 18px 18px;
-  color:var(--muted);font-size:13px;
-  animation:reveal .3s ease;
-}
-.stage-result{
-  margin-top:22px;padding:18px 20px;
-  border-radius:15px;background:#f0eaff;
-  color:#59447e;font-size:13px;
-}
+.detail>summary:after{content:"+";font-size:22px;color:var(--purple);font-weight:400;flex-shrink:0;transition:.3s}
+.detail[open]>summary:after{content:"−";transform:rotate(180deg)}
+.detail[open]{background:white;border-color:#bca8e9;box-shadow:0 12px 28px #35205b12}
+.detail p{padding:0 17px 18px;color:var(--muted);font-size:13px;animation:detailReveal .4s ease}
+@keyframes detailReveal{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.detail:nth-child(3n+1){animation:fromLeft .6s both}
+.detail:nth-child(3n+2){animation:fromBottom .6s both}
+.detail:nth-child(3n){animation:fromRight .6s both}
+@keyframes fromLeft{from{opacity:0;transform:translateX(-15px)}to{opacity:1;transform:translateX(0)}}
+@keyframes fromRight{from{opacity:0;transform:translateX(15px)}to{opacity:1;transform:translateX(0)}}
+@keyframes fromBottom{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+.stage-result{margin-top:24px;padding:19px 21px;border-radius:15px;background:#f0eaff;color:#59447e;font-size:13px}
 .stage-result strong{color:var(--purple)}
 
 /* WORKING PRINCIPLES */
 .principles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.principle{
-  padding:27px;background:white;
-  border:1px solid var(--border);border-radius:20px;
-  transition:.35s;position:relative;overflow:hidden;
-}
-.principle:before{
-  content:"";position:absolute;
-  height:4px;left:0;right:100%;top:0;
-  background:var(--purple);transition:.4s;
-}
+.principle{padding:27px;background:white;border:1px solid var(--border);border-radius:20px;transition:.35s;position:relative;overflow:hidden}
+.principle:before{content:"";position:absolute;height:4px;left:0;right:100%;top:0;background:var(--purple);transition:.4s}
 .principle:hover:before{right:0}
 .principle:hover{transform:translateY(-6px);box-shadow:0 16px 35px #35205b12}
-.principle span{
-  display:block;font:800 12px Manrope;
-  color:#9679d5;margin-bottom:20px;
-}
+.principle span{display:block;font:800 12px Manrope;color:#9679d5;margin-bottom:20px}
 .principle h3{font-size:19px;margin-bottom:10px}
 .principle p{font-size:13px;color:var(--muted)}
 
 /* COMMUNICATION */
-.communication{
-  background:#191522;color:white;
-  padding:85px 0;overflow:hidden;position:relative;
-}
-.communication-grid{
-  display:grid;grid-template-columns:.9fr 1.1fr;
-  gap:55px;align-items:center;
-}
+.communication{background:#191522;color:white;padding:85px 0;overflow:hidden;position:relative}
+.communication-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:center}
 .communication h2{font-size:clamp(33px,4.5vw,51px);margin-bottom:18px}
 .communication .eyebrow{color:#bda7f5}
 .communication-copy{color:#c5bdd3;font-size:14px}
 .comm-list{display:grid;gap:12px}
-.comm-item{
-  display:grid;grid-template-columns:45px 1fr;
-  gap:15px;align-items:start;
-  padding:18px 20px;border-radius:16px;
-  background:#ffffff0d;border:1px solid #ffffff1a;
-  transition:.3s;
-}
+.comm-item{display:grid;grid-template-columns:45px 1fr;gap:15px;align-items:start;padding:18px 20px;border-radius:16px;background:#ffffff0d;border:1px solid #ffffff1a;transition:.3s}
 .comm-item:hover{background:#ffffff18;transform:translateX(7px)}
-.comm-num{
-  width:38px;height:38px;border-radius:11px;
-  display:grid;place-items:center;
-  background:#ffffff18;color:#d7c8ff;
-  font:800 12px Manrope;
-}
+.comm-num{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:#ffffff18;color:#d7c8ff;font:800 12px Manrope}
 .comm-item h3{font-size:15px;margin-bottom:5px}
 .comm-item p{font-size:12px;color:#c5bdd3}
 
 /* QUALITY */
 .quality-section{background:#f2edff}
 .quality-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
-.quality-visual{
-  min-height:340px;border-radius:25px;
-  background:linear-gradient(145deg,#39216c,#7653c4);
-  padding:28px;color:white;
-  display:flex;flex-direction:column;justify-content:space-between;
-  overflow:hidden;position:relative;
-}
-.quality-visual:after{
-  content:"";position:absolute;
-  width:220px;height:300px;
-  right:-80px;bottom:-100px;
-  border:28px solid #ffffff12;
-  transform:rotate(35deg);border-radius:35px;
-}
+.quality-visual{min-height:340px;border-radius:25px;background:linear-gradient(145deg,#39216c,#7653c4);padding:28px;color:white;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative}
+.quality-visual:after{content:"";position:absolute;width:220px;height:300px;right:-80px;bottom:-100px;border:28px solid #ffffff12;transform:rotate(35deg);border-radius:35px;animation:slowRotate 14s linear infinite}
+@keyframes slowRotate{to{transform:rotate(395deg)}}
 .quality-visual small{font-size:10px;letter-spacing:2px;color:#d9cdf5}
-.quality-visual strong{
-  display:block;font:800 clamp(36px,5vw,58px) Manrope;
-  max-width:350px;line-height:1.1;position:relative;z-index:1;
-}
+.quality-visual strong{display:block;font:800 clamp(36px,5vw,58px) Manrope;max-width:350px;line-height:1.1;position:relative;z-index:1}
 .quality-visual span{font-size:12px;color:#d9cdf5;position:relative;z-index:1}
 .quality-points{display:grid;gap:15px}
 .quality-point{padding-bottom:15px;border-bottom:1px solid #ddd3f2}
@@ -382,33 +173,19 @@ header{
 
 /* FAQ */
 .faq-list{max-width:900px;display:grid;gap:12px}
-.faq-item{
-  background:white;border:1px solid var(--border);
-  border-radius:15px;overflow:hidden;
-}
-.faq-item summary{
-  list-style:none;cursor:pointer;
-  padding:19px 22px;display:flex;
-  align-items:center;justify-content:space-between;
-  gap:15px;font-size:14px;font-weight:800;
-}
+.faq-item{background:white;border:1px solid var(--border);border-radius:15px;overflow:hidden;transition:.3s}
+.faq-item:hover{border-color:#c8b7ed;transform:translateX(4px)}
+.faq-item summary{list-style:none;cursor:pointer;padding:19px 22px;display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:14px;font-weight:800}
 .faq-item summary::-webkit-details-marker{display:none}
 .faq-item summary:after{content:"+";font-size:21px;color:var(--purple)}
 .faq-item[open] summary:after{content:"−"}
-.faq-item p{padding:0 22px 20px;color:var(--muted);font-size:13px}
+.faq-item p{padding:0 22px 20px;color:var(--muted);font-size:13px;animation:reveal .35s ease}
 
 /* CTA */
-.cta{
-  padding:85px 0;text-align:center;color:white;
-  background:radial-gradient(circle at 90% 15%,#573a91,transparent 35%),#171321;
-}
+.cta{padding:85px 0;text-align:center;color:white;background:radial-gradient(circle at 90% 15%,#573a91,transparent 35%),#171321}
 .cta h2{font-size:clamp(33px,5vw,53px);margin-bottom:15px}
 .cta p{max-width:620px;margin:0 auto 27px;color:#c5bdd3;font-size:14px}
-.cta a{
-  display:inline-block;background:white;color:var(--purple);
-  padding:14px 25px;border-radius:40px;
-  font-size:13px;font-weight:800;transition:.3s;
-}
+.cta a{display:inline-block;background:white;color:var(--purple);padding:14px 25px;border-radius:40px;font-size:13px;font-weight:800;transition:.3s}
 .cta a:hover{transform:translateY(-4px);box-shadow:0 12px 30px #0004}
 
 /* FOOTER */
@@ -417,45 +194,44 @@ footer{background:#15121f;color:white;padding:55px 0 22px}
 footer p,footer a{font-size:13px;color:#bbb3ca}
 footer a{display:block;margin:8px 0;transition:.3s}
 footer a:hover{color:white}
-.footer-bottom{
-  border-top:1px solid #393344;margin-top:35px;
-  padding-top:20px;font-size:12px;color:#9991a8;
-}
+.footer-bottom{border-top:1px solid #393344;margin-top:35px;padding-top:20px;font-size:12px;color:#9991a8}
 
 /* RESPONSIVE */
+@media(max-width:950px){
+.detail-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.navlinks{gap:13px}
+.navlinks a{font-size:12px}
+}
 @media(max-width:850px){
-  .navlinks{
-    display:none;position:absolute;top:82px;left:0;right:0;
-    background:white;padding:25px;flex-direction:column;
-    align-items:flex-start;border-bottom:1px solid var(--border);
-  }
-  .navlinks.open{display:flex}
-  .menu{display:block}
-  .nav-btn{display:none}
-  .hero-grid,.communication-grid,.quality-grid{grid-template-columns:1fr}
-  .process-visual{min-height:400px}
-  .principles{grid-template-columns:repeat(2,1fr)}
+.navlinks{display:none;position:absolute;top:82px;left:0;right:0;background:white;padding:25px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--border)}
+.navlinks.open{display:flex}
+.menu{display:block}
+.nav-btn{display:none}
+.hero-grid,.communication-grid,.quality-grid{grid-template-columns:1fr}
+.process-visual{min-height:400px}
+.principles{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:600px){
-  .hero{padding:65px 0}
-  .hero h1{letter-spacing:-2px}
-  .process-visual{min-height:360px}
-  .visual-panel{padding:22px;min-height:340px}
-  .visual-label.one{right:-5px}
-  .visual-label.two{left:-5px}
-  .section,.process-section{padding:65px 0}
-  .intro-grid,.detail-grid,.principles{grid-template-columns:1fr}
-  .process-card>summary{
-    grid-template-columns:55px 1fr 35px;
-    gap:12px;padding:18px;
-  }
-  .stage-number{width:52px;height:52px;font-size:18px;border-radius:14px}
-  .stage-copy h3{font-size:18px}
-  .stage-copy p{font-size:11px}
-  .stage-toggle{width:34px;height:34px;font-size:19px}
-  .stage-content{padding:18px}
-  .communication{padding:65px 0}
-  .footer-grid{grid-template-columns:1fr}
+.hero{padding:65px 0}
+.hero h1{letter-spacing:-2px}
+.process-visual{min-height:360px}
+.visual-panel{padding:22px;min-height:340px}
+.visual-label.one{right:-5px}
+.visual-label.two{left:-5px}
+.section,.process-section{padding:65px 0}
+.intro-grid,.detail-grid,.principles{grid-template-columns:1fr}
+.process-card>summary{grid-template-columns:55px 1fr 35px;gap:12px;padding:18px}
+.stage-number{width:52px;height:52px;font-size:18px;border-radius:14px}
+.stage-copy h3{font-size:18px}
+.stage-copy p{font-size:11px}
+.stage-toggle{width:34px;height:34px;font-size:19px}
+.stage-content{padding:18px}
+.detail>summary{min-height:58px}
+.communication{padding:65px 0}
+.footer-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
 }
 </style>
 </head>
@@ -494,48 +270,23 @@ footer a:hover{color:white}
 <div>
 <div class="eyebrow">How we work</div>
 <h1>Clear thinking.<br><span class="gradient">Careful execution.</span></h1>
-<p class="hero-copy">
-Every project deserves a process that makes sense. We begin by understanding what matters, build a practical plan, work through the details and deliver with clarity.
-</p>
+<p class="hero-copy">Every project deserves a process that makes sense. We begin by understanding what matters, build a practical plan, work through the details and deliver with clarity.</p>
 <div class="hero-actions">
 <a href="#our-process" class="btn">Explore Our Process ↗</a>
 <a href="contact.html" class="btn-outline">Discuss a Project</a>
 </div>
 </div>
-
 <div class="process-visual">
 <div class="visual-label one">A clear direction</div>
 <div class="visual-panel">
-<div class="visual-top">
-<span>THE ETERNEASE METHOD</span>
-<span><i class="live-dot"></i>IN MOTION</span>
-</div>
+<div class="visual-top"><span>THE ETERNEASE METHOD</span><span><i class="live-dot"></i>IN MOTION</span></div>
 <div class="flow-stack">
-<div class="flow-step">
-<div class="flow-num">01</div>
-<div><strong>Understand</strong><small>Listen. Clarify. Define.</small></div>
-<div class="flow-arrow">↘</div>
+<div class="flow-step"><div class="flow-num">01</div><div><strong>Understand</strong><small>Listen. Clarify. Define.</small></div><div class="flow-arrow">↘</div></div>
+<div class="flow-step"><div class="flow-num">02</div><div><strong>Plan</strong><small>Structure. Prioritise. Align.</small></div><div class="flow-arrow">↘</div></div>
+<div class="flow-step"><div class="flow-num">03</div><div><strong>Execute</strong><small>Create. Coordinate. Improve.</small></div><div class="flow-arrow">↘</div></div>
+<div class="flow-step"><div class="flow-num">04</div><div><strong>Deliver</strong><small>Review. Finalise. Handover.</small></div><div class="flow-arrow">↗</div></div>
 </div>
-<div class="flow-step">
-<div class="flow-num">02</div>
-<div><strong>Plan</strong><small>Structure. Prioritise. Align.</small></div>
-<div class="flow-arrow">↘</div>
-</div>
-<div class="flow-step">
-<div class="flow-num">03</div>
-<div><strong>Execute</strong><small>Create. Coordinate. Improve.</small></div>
-<div class="flow-arrow">↘</div>
-</div>
-<div class="flow-step">
-<div class="flow-num">04</div>
-<div><strong>Deliver</strong><small>Review. Finalise. Handover.</small></div>
-<div class="flow-arrow">↗</div>
-</div>
-</div>
-<div class="visual-bottom">
-<span>THOUGHTFUL BY DESIGN</span>
-<span>BUILT AROUND YOUR GOALS</span>
-</div>
+<div class="visual-bottom"><span>THOUGHTFUL BY DESIGN</span><span>BUILT AROUND YOUR GOALS</span></div>
 </div>
 <div class="visual-label two">From idea to outcome</div>
 </div>
@@ -551,26 +302,10 @@ Every project deserves a process that makes sense. We begin by understanding wha
 <p>We believe that a strong result comes from clear expectations, organised work and consistent communication. Our approach keeps the project understandable at every stage.</p>
 </div>
 <div class="intro-grid">
-<div class="intro-card">
-<div class="intro-index">01 / CLARITY FIRST</div>
-<h3>Understand before acting</h3>
-<p>We take time to understand the requirement, the intended audience, the priorities and the outcome expected. This helps avoid unnecessary work and confusion later.</p>
-</div>
-<div class="intro-card">
-<div class="intro-index">02 / STRUCTURE</div>
-<h3>A plan people can follow</h3>
-<p>We break a requirement into manageable stages, identify responsibilities and agree on what needs to happen first, next and at completion.</p>
-</div>
-<div class="intro-card">
-<div class="intro-index">03 / COLLABORATION</div>
-<h3>The right people at the right stage</h3>
-<p>Different projects need different expertise. We bring the relevant team capabilities into the workflow instead of forcing every project into the same solution.</p>
-</div>
-<div class="intro-card">
-<div class="intro-index">04 / RESPONSIBILITY</div>
-<h3>Finish with confidence</h3>
-<p>We review the work, organise the final output and make the handover clear, so the result is useful beyond the moment of delivery.</p>
-</div>
+<div class="intro-card"><div class="intro-index">01 / CLARITY FIRST</div><h3>Understand before acting</h3><p>We take time to understand the requirement, the intended audience, the priorities and the outcome expected. This helps avoid unnecessary work and confusion later.</p></div>
+<div class="intro-card"><div class="intro-index">02 / STRUCTURE</div><h3>A plan people can follow</h3><p>We break a requirement into manageable stages, identify responsibilities and agree on what needs to happen first, next and at completion.</p></div>
+<div class="intro-card"><div class="intro-index">03 / COLLABORATION</div><h3>The right people at the right stage</h3><p>Different projects need different expertise. We bring the relevant team capabilities into the workflow instead of forcing every project into the same solution.</p></div>
+<div class="intro-card"><div class="intro-index">04 / RESPONSIBILITY</div><h3>Finish with confidence</h3><p>We review the work, organise the final output and make the handover clear, so the result is useful beyond the moment of delivery.</p></div>
 </div>
 </div>
 </section>
@@ -581,7 +316,7 @@ Every project deserves a process that makes sense. We begin by understanding wha
 <div class="section-head">
 <div class="eyebrow">The process in detail</div>
 <h2>Four stages.<br><span class="gradient">One connected journey.</span></h2>
-<p>Open each stage to explore the steps within it. Every section has additional expandable details to make the process easy to understand.</p>
+<p>Explore 40 practical activities across four stages. Open any option to understand how each part of the process works.</p>
 </div>
 
 <div class="process-list">
@@ -590,11 +325,7 @@ Every project deserves a process that makes sense. We begin by understanding wha
 <details class="process-card">
 <summary>
 <div class="stage-number">01</div>
-<div class="stage-copy">
-<small>STAGE ONE</small>
-<h3>Discovery & Understanding</h3>
-<p>We start by understanding the requirement, the context and what a successful outcome should look like.</p>
-</div>
+<div class="stage-copy"><small>STAGE ONE</small><h3>Discovery & Understanding</h3><p>We start by understanding the requirement, the context and what a successful outcome should look like.</p></div>
 <div class="stage-toggle">+</div>
 </summary>
 <div class="stage-content">
@@ -608,6 +339,8 @@ Every project deserves a process that makes sense. We begin by understanding wha
 <details class="detail"><summary>Available Resources</summary><p>We review the content, documents, brand assets, tools, access and other resources that may already be available for the project.</p></details>
 <details class="detail"><summary>Questions & Clarifications</summary><p>We identify missing details early and resolve uncertainties before they create delays or affect the quality of execution.</p></details>
 <details class="detail"><summary>Success Criteria</summary><p>We agree on how the completed work will be evaluated, such as completeness, usability, accuracy, presentation or an agreed deliverable.</p></details>
+<details class="detail"><summary>Existing Work Review</summary><p>When a project involves an existing website, document, system or workflow, we review what is already in place and identify what should be retained, improved or changed.</p></details>
+<details class="detail"><summary>Expectation Alignment</summary><p>We bring the gathered information together and confirm that everyone shares the same understanding of the requirement, priorities and expected result.</p></details>
 </div>
 <div class="stage-result"><strong>Stage outcome:</strong> A clear requirement, agreed expectations and a shared understanding of the project.</div>
 </div>
@@ -617,11 +350,7 @@ Every project deserves a process that makes sense. We begin by understanding wha
 <details class="process-card">
 <summary>
 <div class="stage-number">02</div>
-<div class="stage-copy">
-<small>STAGE TWO</small>
-<h3>Strategy & Planning</h3>
-<p>We turn the requirement into an organised plan with priorities, responsibilities and practical milestones.</p>
-</div>
+<div class="stage-copy"><small>STAGE TWO</small><h3>Strategy & Planning</h3><p>We turn the requirement into an organised plan with priorities, responsibilities and practical milestones.</p></div>
 <div class="stage-toggle">+</div>
 </summary>
 <div class="stage-content">
@@ -635,6 +364,8 @@ Every project deserves a process that makes sense. We begin by understanding wha
 <details class="detail"><summary>Tools & Resources</summary><p>We identify the tools, reference files, communication channels and working resources needed to support the project.</p></details>
 <details class="detail"><summary>Risk & Dependency Review</summary><p>We consider potential blockers, missing inputs, approval dependencies and other issues that could affect the work.</p></details>
 <details class="detail"><summary>Plan Confirmation</summary><p>We review the proposed approach with the relevant stakeholders so that expectations and next steps are clear before execution begins.</p></details>
+<details class="detail"><summary>Budget & Effort Consideration</summary><p>Where applicable, we consider the expected effort, available resources and practical constraints so that the planned work remains realistic.</p></details>
+<details class="detail"><summary>Contingency Planning</summary><p>We consider alternative ways to handle possible delays, missing inputs or changing priorities, helping the team respond without losing direction.</p></details>
 </div>
 <div class="stage-result"><strong>Stage outcome:</strong> An organised project plan with clear priorities, responsibilities and next steps.</div>
 </div>
@@ -644,11 +375,7 @@ Every project deserves a process that makes sense. We begin by understanding wha
 <details class="process-card">
 <summary>
 <div class="stage-number">03</div>
-<div class="stage-copy">
-<small>STAGE THREE</small>
-<h3>Execution & Coordination</h3>
-<p>We move from planning to practical work while keeping communication, progress and quality in focus.</p>
-</div>
+<div class="stage-copy"><small>STAGE THREE</small><h3>Execution & Coordination</h3><p>We move from planning to practical work while keeping communication, progress and quality in focus.</p></div>
 <div class="stage-toggle">+</div>
 </summary>
 <div class="stage-content">
@@ -662,6 +389,8 @@ Every project deserves a process that makes sense. We begin by understanding wha
 <details class="detail"><summary>Review Checkpoints</summary><p>Work is reviewed at suitable stages rather than waiting until the very end. This helps catch gaps while there is still time to address them.</p></details>
 <details class="detail"><summary>Change Management</summary><p>If requirements change, we clarify the new expectation and assess its effect on the scope, timeline and agreed deliverables.</p></details>
 <details class="detail"><summary>Documentation & Records</summary><p>Important decisions, updates and working information are organised so the project remains easier to follow and hand over.</p></details>
+<details class="detail"><summary>Team Collaboration</summary><p>We coordinate the people involved, share relevant information and help keep related activities connected throughout the execution stage.</p></details>
+<details class="detail"><summary>Continuous Improvement</summary><p>As work progresses, we identify practical improvements, address recurring issues and refine the workflow where doing so supports the agreed outcome.</p></details>
 </div>
 <div class="stage-result"><strong>Stage outcome:</strong> Completed work, visible progress and coordinated project execution.</div>
 </div>
@@ -671,11 +400,7 @@ Every project deserves a process that makes sense. We begin by understanding wha
 <details class="process-card">
 <summary>
 <div class="stage-number">04</div>
-<div class="stage-copy">
-<small>STAGE FOUR</small>
-<h3>Review, Delivery & Handover</h3>
-<p>We check the final work, organise the deliverables and close the project with clarity.</p>
-</div>
+<div class="stage-copy"><small>STAGE FOUR</small><h3>Review, Delivery & Handover</h3><p>We check the final work, organise the deliverables and close the project with clarity.</p></div>
 <div class="stage-toggle">+</div>
 </summary>
 <div class="stage-content">
@@ -689,6 +414,8 @@ Every project deserves a process that makes sense. We begin by understanding wha
 <details class="detail"><summary>Knowledge Transfer</summary><p>Where required, we explain the completed work, key decisions and relevant next steps to the person receiving the handover.</p></details>
 <details class="detail"><summary>Project Closure</summary><p>We confirm the completion status, note any remaining agreed items and close the project in an organised manner.</p></details>
 <details class="detail"><summary>Future Improvements</summary><p>We can identify possible next steps or improvement opportunities separately, without mixing them into the completed scope.</p></details>
+<details class="detail"><summary>Final Documentation</summary><p>We prepare or organise the relevant records, instructions, project notes and supporting material needed for future reference.</p></details>
+<details class="detail"><summary>Post-Delivery Support</summary><p>Where agreed, we remain available for follow-up questions, minor clarifications or additional support after the main deliverables have been handed over.</p></details>
 </div>
 <div class="stage-result"><strong>Stage outcome:</strong> Reviewed deliverables, an organised handover and a clear project closure.</div>
 </div>
@@ -820,15 +547,15 @@ Every project deserves a process that makes sense. We begin by understanding wha
 
 <script>
 function toggleMenu(){
-  document.getElementById('navlinks').classList.toggle('open');
+document.getElementById('navlinks').classList.toggle('open');
 }
 document.getElementById('year').textContent=new Date().getFullYear();
 
-// Keep the four main stages independent.
+// Keep each main stage independent.
 document.querySelectorAll('.process-card').forEach(card=>{
-  card.addEventListener('toggle',()=>{
-    // Nested detail options remain independently expandable.
-  });
+card.addEventListener('toggle',()=>{
+// Each stage and its nested options can open independently.
+});
 });
 </script>
 
