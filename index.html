@@ -1,0 +1,641 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ETERNEASE | Digital Agency & IT Consultants</title>
+<meta name="description" content="ETERNEASE — Digital Agency | IT Consultants. Creative, financial, technical and professional services.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --purple:#5428b5;
+  --violet:#9473ee;
+  --dark:#171321;
+  --light:#faf9ff;
+  --muted:#716d80;
+  --border:#e9e4f3;
+  --lav:#eee9ff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--light);
+  color:var(--dark);
+  font-family:'DM Sans',sans-serif;
+  line-height:1.7;
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:Manrope,sans-serif;line-height:1.15;letter-spacing:-1.5px}
+a{text-decoration:none;color:inherit}
+button{font:inherit;cursor:pointer}
+.container{width:min(1200px,91%);margin:auto}
+
+/* NAVIGATION */
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(250,249,255,.91);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.nav{
+  height:85px;display:flex;
+  justify-content:space-between;
+  align-items:center;gap:20px;
+}
+.logo{display:flex;align-items:center;gap:12px}
+.logo svg{width:48px;height:48px}
+.logo-name{font:800 22px Manrope;letter-spacing:1px}
+.logo-tag{font-size:10px;letter-spacing:1px;color:var(--muted)}
+.navlinks{display:flex;gap:24px;align-items:center}
+.navlinks a{
+  font-size:13px;font-weight:600;
+  color:#666174;transition:.3s;
+}
+.navlinks a:hover,.navlinks a.active{color:var(--purple)}
+.nav-btn,.btn{
+  display:inline-block;padding:13px 23px;
+  border-radius:50px;background:var(--purple);
+  color:white;font-weight:700;font-size:14px;
+  border:0;transition:.3s;
+}
+.nav-btn:hover,.btn:hover{
+  background:#321477;transform:translateY(-3px);
+  box-shadow:0 12px 30px #5428b533;
+}
+.menu{display:none;background:none;border:0;font-size:25px;color:var(--purple)}
+
+/* PAGE SYSTEM */
+.page{display:none;animation:pageIn .65s ease}
+.page.active{display:block}
+@keyframes pageIn{
+  from{opacity:0;transform:translateY(18px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.section{padding:95px 0}
+.eyebrow{
+  color:var(--purple);font-size:12px;
+  letter-spacing:3px;text-transform:uppercase;
+  font-weight:800;margin-bottom:20px;
+}
+.heading{font-size:clamp(35px,5vw,62px);margin-bottom:20px}
+.gradient{
+  background:linear-gradient(100deg,#49219c,#9b7af0);
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent;
+}
+.description{color:var(--muted);max-width:650px;font-size:16px}
+.page-heading{
+  padding:100px 0 75px;
+  background:radial-gradient(ellipse at 85% 10%,#e2d9ff,transparent 48%);
+  border-bottom:1px solid var(--border);
+}
+.page-heading h1{font-size:clamp(42px,6vw,75px);max-width:900px;margin-bottom:25px}
+
+/* HOME HERO */
+.hero{padding:100px 0 95px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+.hero h1{font-size:clamp(50px,7vw,88px);margin-bottom:25px}
+.hero p{font-size:17px;color:var(--muted);max-width:570px;margin-bottom:32px}
+.actions{display:flex;gap:13px;flex-wrap:wrap}
+.btn-outline{
+  border:1px solid #d9ccef;color:var(--purple);
+  background:white;padding:13px 23px;border-radius:50px;
+  font-weight:700;font-size:14px;
+}
+.visual{
+  height:490px;border-radius:35px;
+  background:linear-gradient(140deg,#1b1530,#44218c,#7958ce);
+  position:relative;overflow:hidden;
+  box-shadow:0 35px 80px #41208033;
+}
+.orbit{
+  width:340px;height:340px;
+  border:1px solid #ffffff55;border-radius:50%;
+  position:absolute;top:70px;left:50%;
+  transform:translateX(-50%);
+  animation:rotate 30s linear infinite;
+}
+.orbit:before,.orbit:after{
+  content:"";position:absolute;inset:35px;
+  border:1px solid #ffffff35;border-radius:50%;
+}
+.orbit:after{inset:75px}
+.center-logo{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:145px;height:145px;border-radius:50%;
+  background:white;display:grid;place-items:center;
+  box-shadow:0 15px 60px #0005;
+}
+.center-logo svg{width:115px}
+.float{
+  position:absolute;background:white;
+  border-radius:17px;padding:15px 18px;
+  box-shadow:0 15px 40px #0003;
+  font-size:12px;animation:float 5s infinite ease-in-out;
+}
+.float strong{display:block;font-size:14px;color:var(--dark)}
+.float.one{top:35px;left:20px}
+.float.two{right:15px;top:205px;animation-delay:-2s}
+.float.three{bottom:30px;left:35px;animation-delay:-3s}
+@keyframes rotate{to{transform:translateX(-50%) rotate(360deg)}}
+@keyframes float{50%{transform:translateY(-13px)}}
+
+/* CONTENT BLOCKS */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card{
+  background:white;border:1px solid var(--border);
+  padding:30px;border-radius:23px;
+  transition:.35s;position:relative;overflow:hidden;
+}
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 55px #35205b14;
+  border-color:#cbbaf0;
+}
+.card h3{font-size:21px;margin-bottom:13px}
+.card p{color:var(--muted);font-size:14px}
+.card-number{color:#9c87d2;font-weight:800;font-size:12px;margin-bottom:25px}
+.card-link{color:var(--purple);font-weight:700;font-size:13px}
+.dark-band{
+  background:radial-gradient(circle at 90% 20%,#54348d,transparent 35%),#171321;
+  color:white;padding:90px 0;
+}
+.dark-band h2{font-size:clamp(35px,5vw,55px);margin-bottom:20px}
+.dark-band p{color:#c4bbd5;max-width:650px}
+.marquee{
+  padding:20px 0;background:white;
+  border-block:1px solid var(--border);
+  overflow:hidden;white-space:nowrap;
+  color:#7555bd;font-size:13px;
+  font-weight:800;letter-spacing:3px;
+}
+.marquee span{display:inline-block;padding-left:100%;animation:marquee 27s linear infinite}
+@keyframes marquee{to{transform:translateX(-100%)}}
+
+/* SERVICES */
+.service-group{margin-bottom:60px}
+.service-group h2{font-size:34px;margin-bottom:12px}
+.service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-top:25px}
+.service{
+  padding:24px;background:white;border:1px solid var(--border);
+  border-radius:18px;transition:.3s;
+}
+.service:hover{transform:translateY(-5px);box-shadow:0 15px 35px #30204d12}
+.service h3{font-size:17px;margin-bottom:8px}
+.service p{font-size:14px;color:var(--muted)}
+
+/* FOUNDERS */
+.person{padding:0;overflow:hidden}
+.person-photo{
+  height:220px;background:linear-gradient(140deg,#eee9ff,#faf9ff);
+  display:grid;place-items:center;color:#7658ba;
+  border-bottom:1px solid var(--border);
+}
+.person-photo span{font-size:12px;letter-spacing:2px}
+.person-info{padding:25px}
+.role{color:#886bd0;font-size:12px;font-weight:700;margin-bottom:10px}
+.social{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}
+.social a{font-size:12px;color:var(--purple);border:1px solid var(--border);padding:6px 12px;border-radius:30px}
+
+/* PORTFOLIO */
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.work{background:white;border:1px solid var(--border);border-radius:20px;overflow:hidden}
+.work-image{
+  height:190px;background:linear-gradient(140deg,#eee9ff,#faf9ff);
+  display:grid;place-items:center;color:#8b76be;
+  font-size:12px;letter-spacing:2px;
+}
+.work-info{padding:22px}
+.work-info h3{font-size:18px;margin-bottom:8px}
+.work-info p{font-size:13px;color:var(--muted)}
+
+/* APPROACH */
+.timeline{border-left:2px solid #d9cdf2;padding-left:30px;margin-top:35px}
+.timeline article{margin-bottom:32px;position:relative}
+.timeline article:before{
+  content:"";position:absolute;left:-37px;top:5px;
+  height:12px;width:12px;border-radius:50%;
+  background:var(--purple);box-shadow:0 0 0 5px #eee9ff;
+}
+.timeline h3{margin-bottom:8px}
+.timeline p{color:var(--muted);font-size:14px}
+.faq details{padding:20px 0;border-bottom:1px solid var(--border)}
+.faq summary{cursor:pointer;font-weight:700}
+.faq p{margin-top:12px;color:var(--muted);font-size:14px}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px}
+.contact-box{padding:35px;background:white;border:1px solid var(--border);border-radius:25px}
+.field{margin-bottom:17px}
+.field label{display:block;font-size:13px;font-weight:700;margin-bottom:7px}
+.field input,.field textarea,.field select{
+  width:100%;padding:14px;border:1px solid var(--border);
+  background:#fcfbff;border-radius:12px;font:inherit;
+}
+.field textarea{height:130px;resize:vertical}
+
+/* FOOTER */
+footer{background:#15121f;color:white;padding:65px 0 25px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:35px}
+footer p,footer a{color:#bbb3ca;font-size:13px}
+footer a{display:block;margin:8px 0}
+.footer-bottom{border-top:1px solid #393344;margin-top:35px;padding-top:20px;font-size:12px;color:#9991a8}
+.reveal{opacity:0;transform:translateY(25px);transition:.8s}
+.reveal.show{opacity:1;transform:none}
+@media(max-width:850px){
+ .navlinks{display:none;position:absolute;top:85px;left:0;right:0;background:white;padding:25px;flex-direction:column;align-items:flex-start}
+ .navlinks.open{display:flex}.menu{display:block}
+ .nav-btn{display:none}
+ .hero-grid,.contact-grid{grid-template-columns:1fr}
+ .visual{height:390px}
+ .grid3,.work-grid{grid-template-columns:repeat(2,1fr)}
+ .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+ .grid3,.grid2,.service-grid,.work-grid,.footer-grid{grid-template-columns:1fr}
+ .section{padding:65px 0}
+ .hero{padding:65px 0}
+ .visual{height:350px}
+ .logo-name{font-size:17px}
+ .logo-tag{font-size:8px}
+ .float{font-size:10px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container nav">
+<a href="#" class="logo" onclick="showPage('home');return false">
+<svg viewBox="0 0 100 100" fill="none">
+<path d="M18 54 C18 9 78 2 88 38 C98 73 56 98 31 76 C14 61 24 31 51 29 C76 27 79 49 59 60 C45 68 31 58 18 58" stroke="#6739C1" stroke-width="9" stroke-linecap="round"/>
+</svg>
+<div>
+<div class="logo-name">ETERNEASE</div>
+<div class="logo-tag">DIGITAL AGENCY | IT CONSULTANTS</div>
+</div>
+</a>
+
+<button class="menu" onclick="toggleMenu()">☰</button>
+
+<nav class="navlinks" id="navlinks">
+<a href="#" onclick="showPage('home');return false" class="active">Home</a>
+<a href="#" onclick="showPage('about');return false">About</a>
+<a href="#" onclick="showPage('services');return false">Services</a>
+<a href="#" onclick="showPage('portfolio');return false">Portfolio</a>
+<a href="#" onclick="showPage('approach');return false">Approach</a>
+<a href="#" onclick="showPage('contact');return false">Contact</a>
+</nav>
+<a class="nav-btn" href="#" onclick="showPage('contact');return false">Let's Talk ↗</a>
+</div>
+</header>
+
+<main>
+
+<!-- HOME -->
+<div class="page active" id="home">
+<section class="hero">
+<div class="container hero-grid">
+<div>
+<div class="eyebrow">Digital Agency | IT Consultants</div>
+<h1>Ideas into <span class="gradient">impactful</span> work.</h1>
+<p>We bring creativity, technology, business expertise and thoughtful execution together to help people and businesses move forward.</p>
+<div class="actions">
+<button class="btn" onclick="showPage('services')">Explore Services ↗</button>
+<button class="btn-outline" onclick="showPage('portfolio')">Meet Our Team</button>
+</div>
+</div>
+
+<div class="visual">
+<div class="orbit"></div>
+<div class="center-logo">
+<svg viewBox="0 0 100 100" fill="none">
+<path d="M18 54 C18 9 78 2 88 38 C98 73 56 98 31 76 C14 61 24 31 51 29 C76 27 79 49 59 60 C45 68 31 58 18 58" stroke="#6739C1" stroke-width="9" stroke-linecap="round"/>
+</svg>
+</div>
+<div class="float one"><strong>Creative Thinking</strong>Ideas, design & content</div>
+<div class="float two"><strong>Digital Excellence</strong>Websites & technology</div>
+<div class="float three"><strong>Business Expertise</strong>Finance & operations</div>
+</div>
+</div>
+</section>
+
+<div class="marquee"><span>CREATIVITY ✦ TECHNOLOGY ✦ FINANCE ✦ DIGITAL SOLUTIONS ✦ PROJECT SUPPORT ✦ CREATIVE THINKING ✦</span></div>
+
+<section class="section">
+<div class="container">
+<div class="eyebrow">What makes us different</div>
+<h2 class="heading">Different expertise.<br><span class="gradient">One powerful team.</span></h2>
+<div class="grid3">
+<div class="card"><div class="card-number">01 / DIGITAL</div><h3>Digital Experiences</h3><p>Business websites, portfolio websites, UI design, web development and creative digital solutions.</p><a class="card-link" href="#" onclick="showPage('services');return false">Discover more ↗</a></div>
+<div class="card"><div class="card-number">02 / BUSINESS</div><h3>Business Operations</h3><p>Accounting, financial documentation, virtual assistance, recruitment and project coordination.</p><a class="card-link" href="#" onclick="showPage('services');return false">Discover more ↗</a></div>
+<div class="card"><div class="card-number">03 / CREATIVE</div><h3>Creative Production</h3><p>Content, graphic design, social media, AI-assisted workflows, audio and visual production.</p><a class="card-link" href="#" onclick="showPage('services');return false">Discover more ↗</a></div>
+</div>
+</div>
+</section>
+
+<section class="dark-band">
+<div class="container">
+<div class="eyebrow">The ETERNEASE vision</div>
+<h2>We don't just complete tasks.<br>We create better ways forward.</h2>
+<p>Our team combines different professional backgrounds to provide flexible, thoughtful and dependable services. Every project deserves attention, clarity and quality.</p>
+<br><button class="btn" onclick="showPage('about')">Discover ETERNEASE ↗</button>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="eyebrow">Explore ETERNEASE</div>
+<h2 class="heading">The right expertise.<br><span class="gradient">When you need it.</span></h2>
+<div class="grid2">
+<div class="card"><h3>Explore our capabilities</h3><p>From accounting and recruitment to websites, creative media and professional operations.</p><button class="btn" onclick="showPage('services')">View all services</button></div>
+<div class="card"><h3>Meet the people behind the work</h3><p>Discover the individual strengths and professional experience of our founding team.</p><button class="btn" onclick="showPage('portfolio')">Meet our team</button></div>
+</div>
+</div>
+</section>
+</div>
+
+<!-- ABOUT -->
+<div class="page" id="about">
+<section class="page-heading">
+<div class="container">
+<div class="eyebrow">About ETERNEASE</div>
+<h1>Built on expertise.<br><span class="gradient">Driven by possibilities.</span></h1>
+<p class="description">A multidisciplinary agency bringing together creative thinking, technology, financial knowledge and professional services.</p>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="grid2">
+<div><div class="eyebrow">Our story</div><h2 class="heading">One team.<br>Many perspectives.</h2></div>
+<div><p class="description">ETERNEASE brings together professionals with different backgrounds and complementary strengths. Our work spans digital development, creative production, finance, healthcare operations, recruitment and project support.</p><p class="description">We believe strong results come from understanding the requirement, respecting expertise and executing with care.</p></div>
+</div>
+<br><br>
+<div class="grid3">
+<div class="card"><div class="card-number">01</div><h3>Quality</h3><p>Attention to detail and a commitment to well-finished work.</p></div>
+<div class="card"><div class="card-number">02</div><h3>Clarity</h3><p>Clear communication and transparent working processes.</p></div>
+<div class="card"><div class="card-number">03</div><h3>Adaptability</h3><p>Different skills and flexible thinking for different challenges.</p></div>
+</div>
+</div>
+</section>
+<section class="dark-band"><div class="container"><h2>Good work begins with understanding.</h2><p>We listen first, plan carefully and bring the relevant expertise into every project.</p></div></section>
+</div>
+
+<!-- SERVICES -->
+<div class="page" id="services">
+<section class="page-heading">
+<div class="container">
+<div class="eyebrow">Our services</div>
+<h1>Expertise for every<br><span class="gradient">important detail.</span></h1>
+<p class="description">Explore the services offered across our three founding team members and their specialist domains.</p>
+</div>
+</section>
+<section class="section">
+<div class="container">
+
+<div class="service-group">
+<div class="eyebrow">01 / Digital and creative</div>
+<h2>Digital, Design & Content</h2>
+<div class="service-grid">
+<div class="service"><h3>Website Design & Development</h3><p>Business websites, portfolio websites, responsive design, web development and website maintenance.</p></div>
+<div class="service"><h3>UI & Graphic Design</h3><p>UI layouts, graphic design, image editing, posters, social media creatives and visual direction.</p></div>
+<div class="service"><h3>Social Media Management</h3><p>Content planning, social media graphics, account coordination and publishing support.</p></div>
+<div class="service"><h3>AI Services</h3><p>AI-assisted content, design workflows, prompt engineering and AI tools research.</p></div>
+<div class="service"><h3>Content & Technical Writing</h3><p>Website content, scripts, technical documents, reports and editorial support.</p></div>
+<div class="service"><h3>Audio & Media</h3><p>Audio engineering, AI voice workflows, voice-over preparation and short-form media.</p></div>
+</div>
+</div>
+
+<div class="service-group">
+<div class="eyebrow">02 / Finance and administration</div>
+<h2>Finance, Accounting & Operations</h2>
+<div class="service-grid">
+<div class="service"><h3>Bookkeeping & Accounting</h3><p>Bookkeeping, Tally ERP/Prime, Zoho Books, invoices, ledgers, trial balance and financial records.</p></div>
+<div class="service"><h3>GST & Tax Support</h3><p>GST reconciliation, GSTR-1, GSTR-3B, TDS, ITR preparation and basic compliance support.</p></div>
+<div class="service"><h3>Financial Reconciliation</h3><p>Bank reconciliation, vendor/customer reconciliation, debtors, creditors and outstanding reports.</p></div>
+<div class="service"><h3>Financial Reporting</h3><p>MIS reports, profit and loss, balance sheet preparation, expense tracking and financial analysis.</p></div>
+<div class="service"><h3>Excel & Payroll</h3><p>Advanced Excel, VLOOKUP, XLOOKUP, Pivot Tables, payroll and inventory accounting.</p></div>
+<div class="service"><h3>Virtual Assistance</h3><p>Email management, administrative support, data organisation, research and tracking sheets.</p></div>
+</div>
+</div>
+
+<div class="service-group">
+<div class="eyebrow">03 / Recruitment and project support</div>
+<h2>Recruitment & Project Management</h2>
+<div class="service-grid">
+<div class="service"><h3>US IT Recruitment</h3><p>Candidate sourcing, screening, shortlisting, consultant coordination and recruitment operations.</p></div>
+<div class="service"><h3>Interview Support</h3><p>Interview scheduling, preparation assistance and candidate communication.</p></div>
+<div class="service"><h3>IT Project Support</h3><p>Project coordination, progress tracking, stakeholder communication and administrative support.</p></div>
+<div class="service"><h3>Project Documentation</h3><p>Technical documentation, reports, process records and structured project handovers.</p></div>
+</div>
+</div>
+
+<div class="service-group">
+<div class="eyebrow">04 / Specialist expertise</div>
+<h2>Professional & Specialist Capabilities</h2>
+<div class="service-grid">
+<div class="service"><h3>Healthcare & Anesthesia Experience</h3><p>Anesthesia workstation setup, OT preparation, equipment checks, BIS monitoring and patient-monitoring experience.</p></div>
+<div class="service"><h3>Emergency OT Operations</h3><p>Emergency readiness, equipment troubleshooting, consumable management and OT workflow coordination.</p></div>
+<div class="service"><h3>Patient Safety & Equipment</h3><p>Equipment safety checks, inventory management, emergency-cart checks and perioperative safety practices.</p></div>
+<div class="service"><h3>Christian & Ministry Content</h3><p>Bible study, devotional content, Catholic liturgy research, youth ministry and church event communication.</p></div>
+<div class="service"><h3>AI Research & Automation</h3><p>Prompt engineering, AI tool testing, basic Python automation and browser automation concepts.</p></div>
+<div class="service"><h3>Documentation & Research</h3><p>Research, reports, process management, data organisation and technical troubleshooting.</p></div>
+</div>
+</div>
+
+</div>
+</section>
+</div>
+
+<!-- PORTFOLIO -->
+<div class="page" id="portfolio">
+<section class="page-heading">
+<div class="container">
+<div class="eyebrow">People & portfolio</div>
+<h1>The people behind<br><span class="gradient">ETERNEASE.</span></h1>
+<p class="description">Meet our founding team and explore their individual expertise.</p>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="grid3">
+
+<div class="card person">
+<div class="person-photo"><span>LARSON PHOTO SLOT</span></div>
+<div class="person-info">
+<div class="role">FOUNDER</div>
+<h3>Larson Dhabhi</h3>
+<p>Audio, AI, design, media, professional anesthesia and healthcare operations expertise.</p>
+<div class="social"><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">Snapchat</a></div>
+</div>
+</div>
+
+<div class="card person">
+<div class="person-photo"><span>ASHISH PHOTO SLOT</span></div>
+<div class="person-info">
+<div class="role">CO-FOUNDER · FINANCE</div>
+<h3>Ashish Kumar Bharti</h3>
+<p>Accounting, bookkeeping, GST, TDS, financial reporting and taxation support.</p>
+<div class="social"><a href="#">Instagram</a><a href="#">LinkedIn</a></div>
+</div>
+</div>
+
+<div class="card person">
+<div class="person-photo"><span>VIHAAN PHOTO SLOT</span></div>
+<div class="person-info">
+<div class="role">CO-FOUNDER · DIGITAL & OPERATIONS</div>
+<h3>Vihaan</h3>
+<p>Website development, recruitment, virtual assistance, social media and project support.</p>
+<div class="social"><a href="#">Instagram</a><a href="#">LinkedIn</a></div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="section" style="background:#f0ecfa">
+<div class="container">
+<div class="eyebrow">Our work</div>
+<h2 class="heading">Selected projects & creations.</h2>
+<p class="description">Your portfolio display area. Replace these slots with actual project photographs, videos and links.</p>
+<br><br>
+<div class="work-grid">
+<div class="work"><div class="work-image">PROJECT IMAGE 01</div><div class="work-info"><h3>Project Title</h3><p>Add project description and link here.</p></div></div>
+<div class="work"><div class="work-image">PROJECT IMAGE 02</div><div class="work-info"><h3>Project Title</h3><p>Add project description and link here.</p></div></div>
+<div class="work"><div class="work-image">PROJECT IMAGE 03</div><div class="work-info"><h3>Project Title</h3><p>Add project description and link here.</p></div></div>
+<div class="work"><div class="work-image">PROJECT IMAGE 04</div><div class="work-info"><h3>Project Title</h3><p>Add project description and link here.</p></div></div>
+<div class="work"><div class="work-image">PROJECT IMAGE 05</div><div class="work-info"><h3>Project Title</h3><p>Add project description and link here.</p></div></div>
+<div class="work"><div class="work-image">PROJECT IMAGE 06</div><div class="work-info"><h3>Project Title</h3><p>Add project description and link here.</p></div></div>
+</div>
+</div>
+</section>
+</div>
+
+<!-- APPROACH -->
+<div class="page" id="approach">
+<section class="page-heading">
+<div class="container">
+<div class="eyebrow">Our approach</div>
+<h1>Thoughtful process.<br><span class="gradient">Meaningful outcomes.</span></h1>
+<p class="description">A practical way of working that keeps every project organised, collaborative and focused.</p>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="timeline">
+<article><h3>01 — Understand</h3><p>We listen, learn about your requirements and define the desired outcome.</p></article>
+<article><h3>02 — Plan</h3><p>We identify the right expertise, scope, responsibilities and milestones.</p></article>
+<article><h3>03 — Execute</h3><p>We work with attention to quality, communication and detail.</p></article>
+<article><h3>04 — Deliver</h3><p>We organise the final handover and make the next steps clear.</p></article>
+</div>
+</div>
+</section>
+<section class="section" style="background:#f0ecfa">
+<div class="container">
+<div class="eyebrow">Frequently asked questions</div>
+<h2 class="heading">A few things worth knowing.</h2>
+<div class="faq">
+<details><summary>Can I request multiple services together?</summary><p>Yes. Our different expertise areas can be combined according to the project requirements.</p></details>
+<details><summary>Can I see individual team portfolios?</summary><p>Yes. Individual profile and social links are included in the portfolio section.</p></details>
+<details><summary>Can the portfolio be updated later?</summary><p>Yes. The project display slots can be replaced with approved photographs, videos and links.</p></details>
+<details><summary>How do I get started?</summary><p>Use the contact section to share your requirements and preferred contact details.</p></details>
+</div>
+</div>
+</section>
+</div>
+
+<!-- CONTACT -->
+<div class="page" id="contact">
+<section class="page-heading">
+<div class="container">
+<div class="eyebrow">Contact ETERNEASE</div>
+<h1>Let's create something<br><span class="gradient">worth remembering.</span></h1>
+<p class="description">Have a project, business requirement or idea? We would love to hear about it.</p>
+</div>
+</section>
+<section class="section">
+<div class="container contact-grid">
+<div>
+<div class="eyebrow">Get in touch</div>
+<h2 class="heading">Start a conversation.</h2>
+<p class="description">Our official contact information will be added here.</p>
+<br>
+<div class="card">
+<h3>Contact details</h3>
+<p>Email: Add official email</p>
+<p>Phone: Add business number</p>
+<p>Location: Add business location</p>
+<p>Instagram: Add official profile</p>
+<p>LinkedIn: Add company profile</p>
+</div>
+</div>
+<div class="contact-box">
+<h3>Tell us about your project</h3><br>
+<form onsubmit="event.preventDefault();alert('Please connect a form service before publishing.');">
+<div class="field"><label>Name</label><input placeholder="Your name"></div>
+<div class="field"><label>Email</label><input type="email" placeholder="Your email"></div>
+<div class="field"><label>Service required</label>
+<select><option>Select service</option><option>Digital & Creative</option><option>Finance & Accounting</option><option>Recruitment & Project Support</option><option>Specialist Services</option></select></div>
+<div class="field"><label>Message</label><textarea placeholder="Tell us about your requirement"></textarea></div>
+<button class="btn" type="submit">Send Enquiry ↗</button>
+</form>
+</div>
+</div>
+</section>
+</div>
+
+</main>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div>
+<div class="logo">
+<svg viewBox="0 0 100 100" fill="none">
+<path d="M18 54 C18 9 78 2 88 38 C98 73 56 98 31 76 C14 61 24 31 51 29 C76 27 79 49 59 60 C45 68 31 58 18 58" stroke="#a68af2" stroke-width="9" stroke-linecap="round"/>
+</svg>
+<div><div class="logo-name" style="color:white">ETERNEASE</div><div class="logo-tag">DIGITAL AGENCY | IT CONSULTANTS</div></div>
+</div>
+<p style="margin-top:20px;max-width:340px">Creativity, technology and professional expertise — brought together with purpose.</p>
+</div>
+<div><h3>Explore</h3><br>
+<a href="#" onclick="showPage('about');return false">About Us</a>
+<a href="#" onclick="showPage('services');return false">Services</a>
+<a href="#" onclick="showPage('portfolio');return false">Portfolio</a>
+</div>
+<div><h3>Connect</h3><br>
+<a href="#" onclick="showPage('approach');return false">Our Approach</a>
+<a href="#" onclick="showPage('contact');return false">Contact Us</a>
+</div>
+</div>
+<div class="footer-bottom">© <span id="year"></span> ETERNEASE. All Rights Reserved.</div>
+</div>
+</footer>
+
+<script>
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.navlinks a').forEach(a=>a.classList.remove('active'));
+  const names=['home','about','services','portfolio','approach','contact'];
+  const index=names.indexOf(id);
+  const links=document.querySelectorAll('.navlinks a');
+  if(links[index])links[index].classList.add('active');
+  document.getElementById('navlinks').classList.remove('open');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function toggleMenu(){
+  document.getElementById('navlinks').classList.toggle('open');
+}
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
