@@ -8,6 +8,500 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About ETERNEASE | Our Identity & Philosophy</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--purple:#5528b5;
+--violet:#9674eb;
+--dark:#191425;
+--light:#faf9ff;
+--muted:#777185;
+--border:#e9e3f3;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+font-family:'DM Sans',sans-serif;
+background:var(--light);color:var(--dark);
+line-height:1.75;overflow-x:hidden
+}
+h1,h2,h3{font-family:Manrope,sans-serif;line-height:1.2;letter-spacing:-1px}
+a{text-decoration:none;color:inherit}
+button{font:inherit;cursor:pointer}
+.container{width:min(1160px,91%);margin:auto}
+.gradient{
+background:linear-gradient(100deg,#5425ad,#a58af0);
+-webkit-background-clip:text;background-clip:text;color:transparent
+}
+header{
+position:sticky;top:0;z-index:20;
+background:#faf9fff0;backdrop-filter:blur(18px);
+border-bottom:1px solid var(--border)
+}
+.nav{
+height:82px;display:flex;align-items:center;
+justify-content:space-between;gap:20px
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand svg{width:45px}
+.brand strong{font:800 21px Manrope;letter-spacing:1px}
+.brand small{display:block;font-size:9px;letter-spacing:1px;color:var(--muted)}
+.navlinks{display:flex;gap:27px;font-size:13px;font-weight:700;color:#625c70}
+.navlinks a:hover{color:var(--purple)}
+.pill{
+display:inline-block;background:var(--purple);color:white;
+border-radius:50px;padding:12px 22px;font-weight:700;font-size:13px
+}
+.menu{display:none;border:0;background:none;font-size:25px;color:var(--purple)}
+section{position:relative}
+.eyebrow{
+font-size:11px;font-weight:800;letter-spacing:3px;
+text-transform:uppercase;color:var(--purple);margin-bottom:20px
+}
+.hero{
+min-height:690px;display:flex;align-items:center;
+background:
+radial-gradient(ellipse at 80% 25%,#e5dcff,transparent 38%),
+radial-gradient(ellipse at 10% 90%,#f0eaff,transparent 35%);
+overflow:hidden
+}
+.hero-grid{
+display:grid;grid-template-columns:1.1fr .9fr;
+gap:55px;align-items:center;padding:100px 0
+}
+.hero h1{font-size:clamp(48px,7vw,85px);margin-bottom:25px}
+.hero p{font-size:17px;color:var(--muted);max-width:600px}
+.hero-actions{display:flex;gap:15px;flex-wrap:wrap;margin-top:35px}
+.btn{
+display:inline-block;background:var(--purple);color:white;
+padding:14px 25px;border-radius:50px;font-weight:700;
+font-size:13px;border:0;transition:.3s
+}
+.btn:hover{transform:translateY(-4px);box-shadow:0 15px 35px #5528b544}
+.btn-light{background:white;color:var(--purple);border:1px solid var(--border)}
+.art{
+height:430px;border-radius:35px;position:relative;
+background:linear-gradient(145deg,#211832,#542a9d,#9677df);
+display:grid;place-items:center;overflow:hidden;
+box-shadow:0 30px 80px #39206930
+}
+.ring{
+position:absolute;width:300px;height:300px;
+border:1px solid #ffffff70;border-radius:50%;
+animation:spin 25s linear infinite
+}
+.ring:before,.ring:after{
+content:"";position:absolute;inset:35px;
+border:1px solid #ffffff45;border-radius:50%
+}
+.ring:after{inset:75px}
+.logo-circle{
+width:120px;height:120px;border-radius:50%;
+background:white;display:grid;place-items:center;z-index:2
+}
+.logo-circle svg{width:90px}
+.orbit-label{
+position:absolute;background:white;border-radius:15px;
+padding:13px 17px;font-size:12px;font-weight:700;
+box-shadow:0 10px 35px #0003;animation:float 5s ease-in-out infinite
+}
+.orbit-label.a{top:40px;left:15px}
+.orbit-label.b{right:15px;bottom:60px;animation-delay:-2s}
+.orbit-label.c{left:35px;bottom:25px;animation-delay:-3s}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes float{50%{transform:translateY(-12px)}}
+
+.section{padding:105px 0}
+.section-title{font-size:clamp(35px,5vw,57px);margin-bottom:22px}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.intro-text{font-size:16px;color:var(--muted)}
+.intro-text p+p{margin-top:20px}
+.big-number{
+font:800 100px Manrope;color:#e8e0fa;line-height:1
+}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:45px}
+.stat{
+background:white;border:1px solid var(--border);
+border-radius:20px;padding:28px;transition:.35s
+}
+.stat:hover{transform:translateY(-8px);box-shadow:0 20px 40px #24113b12}
+.stat strong{display:block;font:800 22px Manrope;color:var(--purple);margin-bottom:8px}
+.stat p{font-size:13px;color:var(--muted)}
+
+.dark{
+background:radial-gradient(circle at 85% 20%,#56358a,transparent 40%),#191425;
+color:white;padding:110px 0;overflow:hidden
+}
+.dark .eyebrow{color:#c2aaff}
+.dark .section-title{max-width:750px}
+.dark p{color:#c5bfd2}
+.dark-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.quote{
+border-left:2px solid #b397ff;padding:25px 30px;
+font:600 25px Manrope;color:white
+}
+.dark-circles{height:300px;position:relative;display:grid;place-items:center}
+.dark-circles span{
+position:absolute;border:1px solid #ffffff40;border-radius:50%;
+width:150px;height:150px;animation:pulse 5s ease-in-out infinite
+}
+.dark-circles span:nth-child(2){width:220px;height:220px;animation-delay:1s}
+.dark-circles span:nth-child(3){width:290px;height:290px;animation-delay:2s}
+@keyframes pulse{50%{transform:scale(1.08);border-color:#bd9dff}}
+
+.value-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:45px}
+.value{
+background:white;border:1px solid var(--border);
+border-radius:20px;padding:28px;transition:.35s
+}
+.value:hover{background:#f2edff;transform:translateX(7px)}
+.value .num{font-size:12px;color:#9675d9;font-weight:800;letter-spacing:2px}
+.value h3{font-size:21px;margin:15px 0 10px}
+.value p{font-size:14px;color:var(--muted)}
+
+.feature-list{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.feature{padding:30px 0;border-bottom:1px solid var(--border);}
+.feature h3{font-size:20px;margin-bottom:10px}
+.feature p{font-size:14px;color:var(--muted)}
+.feature span{color:var(--purple);font-size:12px;font-weight:800}
+
+.expand-section{margin-top:40px}
+.expand{
+background:white;border:1px solid var(--border);
+border-radius:17px;margin-bottom:13px;overflow:hidden;
+transition:.3s
+}
+.expand:hover{border-color:#b9a3ed}
+.expand summary{
+padding:23px 26px;list-style:none;
+display:flex;align-items:center;justify-content:space-between;
+gap:15px;font-weight:700;cursor:pointer
+}
+.expand summary::-webkit-details-marker{display:none}
+.expand summary:after{
+content:"+";font-size:24px;color:var(--purple);
+transition:.3s
+}
+.expand[open] summary:after{content:"−";transform:rotate(180deg)}
+.expand-content{
+padding:0 26px 25px;color:var(--muted);
+font-size:14px;animation:reveal .4s ease
+}
+@keyframes reveal{
+from{opacity:0;transform:translateY(12px)}
+to{opacity:1;transform:translateY(0)}
+}
+.expand-content p+p{margin-top:13px}
+.expand-content ul{padding-left:20px;margin-top:12px}
+.expand-content li{margin:7px 0}
+
+.banner{
+padding:85px 0;text-align:center;
+background:radial-gradient(ellipse at center,#e7deff,transparent 65%)
+}
+.banner h2{font-size:clamp(35px,5vw,57px);margin-bottom:20px}
+.banner p{color:var(--muted);max-width:600px;margin:0 auto 30px}
+
+footer{background:#171321;color:white;padding:55px 0 22px}
+.footer-row{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+footer p{color:#aaa2b8;font-size:13px}
+footer a{color:#c6bdd7;font-size:13px}
+.footer-bottom{border-top:1px solid #393344;margin-top:35px;padding-top:20px;font-size:12px;color:#a49caf}
+
+.reveal{opacity:0;transform:translateY(30px);transition:.8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){
+*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}
+}
+@media(max-width:800px){
+.navlinks{
+display:none;position:absolute;top:82px;left:0;right:0;
+background:white;padding:25px;flex-direction:column
+}
+.navlinks.open{display:flex}
+.menu{display:block}
+.nav>.pill{display:none}
+.hero-grid,.intro-grid,.dark-grid{grid-template-columns:1fr}
+.hero{min-height:auto}
+.art{height:360px}
+.feature-list{grid-template-columns:1fr}
+}
+@media(max-width:550px){
+.section{padding:70px 0}
+.stat-grid,.value-grid{grid-template-columns:1fr}
+.hero-grid{padding:70px 0}
+.hero h1{font-size:49px}
+.art{height:320px}
+.big-number{font-size:75px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container nav">
+<a href="index.html" class="brand">
+<svg viewBox="0 0 100 100" fill="none">
+<path d="M18 54 C18 9 78 2 88 38 C98 73 56 98 31 76 C14 61 24 31 51 29 C76 27 79 49 59 60 C45 68 31 58 18 58" stroke="#6739C1" stroke-width="9" stroke-linecap="round"/>
+</svg>
+<div><strong>ETERNEASE</strong><small>DIGITAL AGENCY | IT CONSULTANTS</small></div>
+</a>
+<button class="menu" onclick="document.querySelector('.navlinks').classList.toggle('open')">☰</button>
+<nav class="navlinks">
+<a href="index.html">Home</a>
+<a href="about.html" style="color:#5528b5">About Us</a>
+<a href="services.html">Services</a>
+<a href="portfolio.html">Portfolio</a>
+<a href="approach.html">Approach</a>
+<a href="contact.html">Contact</a>
+</nav>
+<a class="pill" href="contact.html">Explore ETERNEASE ↗</a>
+</div>
+</header>
+
+<main>
+
+<section class="hero">
+<div class="container hero-grid">
+<div class="reveal">
+<div class="eyebrow">A closer look at who we are</div>
+<h1>More than a name.<br><span class="gradient">A way of thinking.</span></h1>
+<p>ETERNEASE is built around a simple idea: bring different talents, professional perspectives and creative possibilities together under one identity.</p>
+<div class="hero-actions">
+<a href="#identity" class="btn">Discover our identity ↓</a>
+<a href="#philosophy" class="btn btn-light">Our philosophy</a>
+</div>
+</div>
+<div class="art">
+<div class="ring"></div>
+<div class="logo-circle">
+<svg viewBox="0 0 100 100" fill="none">
+<path d="M18 54 C18 9 78 2 88 38 C98 73 56 98 31 76 C14 61 24 31 51 29 C76 27 79 49 59 60 C45 68 31 58 18 58" stroke="#6739C1" stroke-width="9" stroke-linecap="round"/>
+</svg>
+</div>
+<div class="orbit-label a">Independent thinking</div>
+<div class="orbit-label b">Professional execution</div>
+<div class="orbit-label c">Creative possibilities</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="identity">
+<div class="container">
+<div class="intro-grid reveal">
+<div>
+<div class="eyebrow">01 / Our identity</div>
+<h2 class="section-title">A connected identity.<br><span class="gradient">Distinct expertise.</span></h2>
+<div class="big-number">E.</div>
+</div>
+<div class="intro-text">
+<p>ETERNEASE is a multidisciplinary professional identity designed to connect people, ideas and specialist capabilities.</p>
+<p>Rather than limiting ourselves to one narrow category, our identity reflects the combined strengths of people working across creative, technical, financial, operational and professional fields.</p>
+<p>Every discipline retains its own character. The common thread is a shared commitment to thoughtful work, clear communication and professional standards.</p>
+</div>
+</div>
+
+<div class="stat-grid reveal">
+<div class="stat"><strong>Multidisciplinary</strong><p>A combination of distinct professional backgrounds.</p></div>
+<div class="stat"><strong>People-led</strong><p>Individual expertise remains at the centre of our identity.</p></div>
+<div class="stat"><strong>Purpose-driven</strong><p>Work shaped around actual requirements and outcomes.</p></div>
+</div>
+</div>
+</section>
+
+<section class="dark" id="philosophy">
+<div class="container dark-grid">
+<div class="reveal">
+<div class="eyebrow">02 / Our philosophy</div>
+<h2 class="section-title">Different minds can create something remarkable.</h2>
+<p>We believe expertise becomes more valuable when it is understood, respected and brought together in the right way.</p>
+<br>
+<p>Our approach is not about making every person do everything. It is about recognising individual strengths and creating room for each one to contribute meaningfully.</p>
+</div>
+<div class="dark-circles reveal">
+<span></span><span></span><span></span>
+<div class="quote">One identity.<br>Many perspectives.<br>Shared purpose.</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="eyebrow">03 / What guides us</div>
+<h2 class="section-title reveal">Principles behind<br><span class="gradient">every decision.</span></h2>
+<div class="value-grid">
+<div class="value reveal"><span class="num">01 — QUALITY</span><h3>Attention to detail</h3><p>We value work that is carefully considered, properly structured and finished with attention.</p></div>
+<div class="value reveal"><span class="num">02 — INTEGRITY</span><h3>Honest communication</h3><p>Clarity, realistic expectations and responsible professional conduct matter in every interaction.</p></div>
+<div class="value reveal"><span class="num">03 — OWNERSHIP</span><h3>Taking responsibility</h3><p>We believe in understanding our responsibilities and following through on agreed work.</p></div>
+<div class="value reveal"><span class="num">04 — CREATIVITY</span><h3>Thinking beyond routine</h3><p>We encourage fresh ideas, useful experimentation and better ways of approaching challenges.</p></div>
+<div class="value reveal"><span class="num">05 — COLLABORATION</span><h3>Respecting different strengths</h3><p>Good collaboration means listening, sharing knowledge and appreciating individual contributions.</p></div>
+<div class="value reveal"><span class="num">06 — CONTINUOUS LEARNING</span><h3>Always improving</h3><p>We remain open to learning, evaluating new tools and refining the way we work.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section" style="background:#f1edfa">
+<div class="container">
+<div class="eyebrow">04 / Our working culture</div>
+<h2 class="section-title reveal">A culture built on<br><span class="gradient">ownership and understanding.</span></h2>
+<div class="feature-list">
+<div class="feature reveal"><span>01 / COMMUNICATION</span><h3>Clear conversations</h3><p>We value communication that makes expectations, responsibilities and progress easier to understand.</p></div>
+<div class="feature reveal"><span>02 / RESPONSIBILITY</span><h3>Respect for every role</h3><p>Every professional contribution has a purpose. We believe responsibilities should be clear and respected.</p></div>
+<div class="feature reveal"><span>03 / FLEXIBILITY</span><h3>Adaptability with structure</h3><p>Different requirements need different approaches. We adapt without losing sight of the objective.</p></div>
+<div class="feature reveal"><span>04 / LEARNING</span><h3>Curiosity in practice</h3><p>Research, experimentation and learning help us understand new challenges and improve our thinking.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="eyebrow">05 / Understand us better</div>
+<h2 class="section-title reveal">Explore the details<br><span class="gradient">behind our identity.</span></h2>
+<p style="color:#777185;max-width:650px">Open each section to discover more about how ETERNEASE thinks, operates and develops its professional identity.</p>
+
+<div class="expand-section">
+
+<details class="expand reveal">
+<summary>What does being multidisciplinary mean to us?</summary>
+<div class="expand-content">
+<p>It means recognising that different professional fields have different requirements, knowledge and ways of working.</p>
+<p>Creative work benefits from imagination and visual judgement. Financial work requires accuracy and documentation. Technical work demands structured thinking and problem-solving.</p>
+<p>Our identity makes room for these differences rather than treating them as interchangeable.</p>
+</div>
+</details>
+
+<details class="expand reveal">
+<summary>How do we approach a new challenge?</summary>
+<div class="expand-content">
+<p>We begin by understanding the actual requirement rather than assuming that every challenge needs the same solution.</p>
+<ul>
+<li>Understand the purpose and expected outcome.</li>
+<li>Identify the knowledge and responsibilities involved.</li>
+<li>Clarify the scope and expectations.</li>
+<li>Organise the work into manageable stages.</li>
+<li>Review the result against the original requirement.</li>
+</ul>
+</div>
+</details>
+
+<details class="expand reveal">
+<summary>Why does individual expertise matter?</summary>
+<div class="expand-content">
+<p>Every professional brings a different combination of knowledge, practical experience and perspective.</p>
+<p>We believe these individual strengths should remain visible and properly represented. A person's professional identity should not disappear inside a company name.</p>
+</div>
+</details>
+
+<details class="expand reveal">
+<summary>What does quality mean at ETERNEASE?</summary>
+<div class="expand-content">
+<p>Quality is not simply about appearance. It includes accuracy, usability, communication, consistency and whether the result fulfils its intended purpose.</p>
+<p>We value both the final output and the thought and responsibility behind it.</p>
+</div>
+</details>
+
+<details class="expand reveal">
+<summary>How do we think about technology and innovation?</summary>
+<div class="expand-content">
+<p>Technology is useful when it solves a genuine problem or improves the way work is performed.</p>
+<p>We remain interested in evaluating emerging tools, understanding their limitations and exploring responsible ways to use them.</p>
+</div>
+</details>
+
+<details class="expand reveal">
+<summary>What kind of professional relationships do we value?</summary>
+<div class="expand-content">
+<p>We value relationships based on mutual respect, clarity, accountability and professional communication.</p>
+<p>Understanding another person's requirements and respecting their time are essential parts of a good working relationship.</p>
+</div>
+</details>
+
+<details class="expand reveal">
+<summary>How do we see our future?</summary>
+<div class="expand-content">
+<p>Our long-term direction is to strengthen our professional identity, develop individual capabilities, improve our working systems and create meaningful opportunities for collaboration.</p>
+<p>Growth should be supported by capability, learning and consistent standards.</p>
+</div>
+</details>
+
+</div>
+</div>
+</section>
+
+<section class="banner">
+<div class="container reveal">
+<div class="eyebrow">The ETERNEASE perspective</div>
+<h2>Built with individuality.<br><span class="gradient">Connected by purpose.</span></h2>
+<p>We believe the strongest identity is one that gives every individual the space to contribute while working towards a shared direction.</p>
+<a class="btn" href="index.html">Return to ETERNEASE ↗</a>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="container">
+<div class="footer-row">
+<div>
+<div class="brand">
+<svg viewBox="0 0 100 100" fill="none">
+<path d="M18 54 C18 9 78 2 88 38 C98 73 56 98 31 76 C14 61 24 31 51 29 C76 27 79 49 59 60 C45 68 31 58 18 58" stroke="#a68af2" stroke-width="9" stroke-linecap="round"/>
+</svg>
+<div><strong style="color:white">ETERNEASE</strong><small style="color:#aaa2b8">DIGITAL AGENCY | IT CONSULTANTS</small></div>
+</div>
+<p style="margin-top:15px;max-width:350px">Different expertise. One connected identity.</p>
+</div>
+<div>
+<p>EXPLORE</p><br>
+<a href="index.html">Home</a><br>
+<a href="services.html">Services</a><br>
+<a href="portfolio.html">Portfolio</a>
+</div>
+<div>
+<p>CONNECT</p><br>
+<a href="approach.html">Our Approach</a><br>
+<a href="contact.html">Contact</a><br>
+<a href="#identity">Our identity</a>
+</div>
+</div>
+<div class="footer-bottom">© <span id="year"></span> ETERNEASE. All Rights Reserved.</div>
+</div>
+</footer>
+
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('visible');
+observer.unobserve(entry.target);
+}
+});
+},{threshold:0.12});
+
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+document.querySelectorAll('.expand').forEach(item=>{
+item.addEventListener('toggle',()=>{
+if(item.open){
+item.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+});
+});
+</script>
+
+</body>
+</html>
+
 :root{
 --purple:#5528b5;
 --violet:#9674eb;
