@@ -1,0 +1,527 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | ETERNEASE</title>
+<meta name="description" content="Connect with ETERNEASE to discuss your next digital, creative or professional project.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--purple:#5428b5;
+--violet:#9473ee;
+--dark:#171321;
+--light:#faf9ff;
+--muted:#716d80;
+--border:#e9e4f3;
+--lav:#eee9ff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--light);color:var(--dark);font-family:'DM Sans',sans-serif;line-height:1.7;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button,input,textarea,select{font:inherit}
+.container{width:min(1200px,92%);margin:auto}
+h1,h2,h3{font-family:Manrope,sans-serif;line-height:1.2;letter-spacing:-1px}
+
+/* NAVIGATION */
+header{
+position:sticky;top:0;z-index:100;
+background:rgba(250,249,255,.94);
+backdrop-filter:blur(18px);
+border-bottom:1px solid var(--border);
+}
+.nav{min-height:82px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo svg{width:43px;height:43px}
+.logo-name{font:800 21px Manrope;letter-spacing:1px}
+.logo-tag{font-size:9px;letter-spacing:1px;color:var(--muted)}
+.navlinks{display:flex;gap:22px;align-items:center}
+.navlinks a{font-size:13px;font-weight:700;color:#666174;transition:.3s}
+.navlinks a:hover,.navlinks a.active{color:var(--purple)}
+.nav-btn{background:var(--purple);color:white;padding:12px 22px;border-radius:40px;font-size:13px;font-weight:700;transition:.3s}
+.nav-btn:hover{background:#321477;transform:translateY(-3px)}
+.menu{display:none;background:none;border:0;font-size:25px;color:var(--purple)}
+
+/* HERO */
+.hero{
+position:relative;overflow:hidden;
+padding:100px 0 85px;
+background:
+radial-gradient(ellipse at 85% 15%,#e4d9ff,transparent 38%),
+radial-gradient(ellipse at 5% 90%,#f0eaff,transparent 35%),
+linear-gradient(135deg,#faf9ff,#f4efff);
+}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+.eyebrow{color:var(--purple);font-size:11px;letter-spacing:3px;font-weight:800;text-transform:uppercase;margin-bottom:18px}
+.hero h1{font-size:clamp(45px,6vw,75px);letter-spacing:-3px;margin-bottom:22px}
+.gradient{background:linear-gradient(100deg,#49219c,#a084f2);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-copy{color:var(--muted);font-size:16px;max-width:560px}
+.hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-block;padding:13px 23px;background:var(--purple);color:white;border-radius:40px;font-size:13px;font-weight:800;transition:.3s}
+.btn:hover{transform:translateY(-4px);background:#321477;box-shadow:0 12px 28px #5428b533}
+.btn-outline{display:inline-block;padding:12px 22px;border:1px solid #d9ccef;color:var(--purple);border-radius:40px;font-size:13px;font-weight:800;background:white;transition:.3s}
+.btn-outline:hover{transform:translateY(-3px);border-color:var(--purple)}
+
+/* HERO ART */
+.contact-art{min-height:390px;position:relative;display:grid;place-items:center}
+.art-main{
+width:100%;max-width:430px;min-height:325px;
+border-radius:28px;padding:30px;
+background:linear-gradient(145deg,#21172f,#39236c 65%,#6342a7);
+color:white;position:relative;overflow:hidden;
+box-shadow:0 30px 70px #34205b35;
+animation:artFloat 5s ease-in-out infinite;
+}
+@keyframes artFloat{50%{transform:translateY(-9px)}}
+.art-main:before{
+content:"";position:absolute;width:250px;height:250px;
+border:1px solid #ffffff20;border-radius:50%;
+right:-100px;top:-100px;
+box-shadow:0 0 0 25px #ffffff08,0 0 0 50px #ffffff05;
+}
+.art-tag{font-size:10px;letter-spacing:2px;color:#cfc0f1;font-weight:800}
+.art-heading{font:800 37px Manrope;line-height:1.15;margin:40px 0 14px;position:relative;z-index:2}
+.art-text{font-size:13px;color:#d1c6e3;max-width:280px}
+.art-bottom{display:flex;justify-content:space-between;margin-top:40px;font-size:10px;color:#cdbdf0;letter-spacing:1px}
+.art-orb{position:absolute;width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#c4aaff,#7653c4);right:15px;bottom:20px;filter:blur(.2px);opacity:.8;animation:orb 6s ease-in-out infinite}
+@keyframes orb{50%{transform:translate(-20px,-25px) scale(1.15)}}
+.art-label{position:absolute;background:white;color:var(--purple);padding:12px 17px;border-radius:13px;font-size:11px;font-weight:800;box-shadow:0 15px 35px #1b103c30;z-index:3;animation:labelFloat 4s ease-in-out infinite}
+.art-label.one{top:8px;right:-12px}
+.art-label.two{bottom:0;left:-15px;animation-delay:-2s}
+@keyframes labelFloat{50%{transform:translateY(-10px) rotate(-2deg)}}
+
+/* CONTACT INFO */
+.section{padding:90px 0}
+.section-head{max-width:750px;margin-bottom:40px}
+.section-head h2{font-size:clamp(32px,4.5vw,49px);margin-bottom:15px}
+.section-head p{font-size:15px;color:var(--muted)}
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:28px;align-items:start}
+.info-stack{display:grid;gap:15px}
+.info-card{
+display:flex;gap:17px;align-items:flex-start;
+padding:22px;background:white;border:1px solid var(--border);
+border-radius:19px;transition:.35s;
+}
+.info-card:hover{transform:translateX(6px);border-color:#c5b2ec;box-shadow:0 12px 30px #35205b10}
+.info-icon{
+width:48px;height:48px;flex-shrink:0;
+border-radius:14px;background:var(--lav);
+display:grid;place-items:center;color:var(--purple);
+font-size:21px;
+}
+.info-card h3{font-size:15px;margin-bottom:5px}
+.info-card p{font-size:12px;color:var(--muted);overflow-wrap:anywhere}
+.info-card a{color:var(--purple);font-weight:700}
+.info-note{
+padding:23px;border-radius:19px;
+background:linear-gradient(140deg,#35205e,#6042a3);
+color:white;margin-top:5px;
+}
+.info-note h3{font-size:19px;margin-bottom:9px}
+.info-note p{font-size:13px;color:#d4c9e9}
+
+/* CONTACT FORM */
+.form-card{
+background:white;border:1px solid var(--border);
+border-radius:25px;padding:35px;
+box-shadow:0 20px 55px #35205b09;
+}
+.form-heading{margin-bottom:28px}
+.form-heading h2{font-size:27px;margin-bottom:9px}
+.form-heading p{font-size:13px;color:var(--muted)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:grid;gap:7px}
+.field.full{grid-column:1/-1}
+.field label{font-size:12px;font-weight:800;color:#514a62}
+.field input,.field select,.field textarea{
+width:100%;border:1px solid #e5dfef;
+background:#fcfbff;border-radius:11px;
+padding:13px 14px;font-size:13px;color:var(--dark);
+outline:none;transition:.3s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+border-color:var(--violet);background:white;
+box-shadow:0 0 0 4px #9473ee17;
+}
+.field textarea{min-height:130px;resize:vertical}
+.field input::placeholder,.field textarea::placeholder{color:#aaa3b8}
+.submit-btn{
+border:0;width:100%;padding:15px 22px;
+border-radius:40px;background:var(--purple);
+color:white;font-size:13px;font-weight:800;
+margin-top:20px;transition:.3s;
+}
+.submit-btn:hover{background:#321477;transform:translateY(-3px);box-shadow:0 12px 25px #5428b533}
+.form-footnote{text-align:center;font-size:11px;color:var(--muted);margin-top:13px}
+.form-message{display:none;margin-top:15px;padding:13px;border-radius:10px;background:#f0eaff;color:var(--purple);font-size:12px}
+
+/* EXPECTATIONS */
+.expect-section{background:linear-gradient(180deg,#f2edff,#faf9ff)}
+.expect-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.expect-card{
+padding:27px;background:white;border:1px solid var(--border);
+border-radius:20px;transition:.35s;position:relative;overflow:hidden;
+}
+.expect-card:hover{transform:translateY(-7px);box-shadow:0 18px 40px #35205b12}
+.expect-number{font:800 12px Manrope;color:#9679d5;margin-bottom:20px}
+.expect-card h3{font-size:19px;margin-bottom:10px}
+.expect-card p{font-size:13px;color:var(--muted)}
+
+/* CTA */
+.cta{padding:85px 0;text-align:center;color:white;background:radial-gradient(circle at 90% 15%,#573a91,transparent 35%),#171321}
+.cta h2{font-size:clamp(33px,5vw,53px);margin-bottom:15px}
+.cta p{max-width:620px;margin:0 auto 27px;color:#c5bdd3;font-size:14px}
+.cta a{display:inline-block;background:white;color:var(--purple);padding:14px 25px;border-radius:40px;font-size:13px;font-weight:800;transition:.3s}
+.cta a:hover{transform:translateY(-4px);box-shadow:0 12px 30px #0004}
+
+/* FOOTER */
+footer{background:#15121f;color:white;padding:55px 0 22px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:35px}
+footer p,footer a{font-size:13px;color:#bbb3ca}
+footer a{display:block;margin:8px 0;transition:.3s}
+footer a:hover{color:white}
+.footer-bottom{border-top:1px solid #393344;margin-top:35px;padding-top:20px;font-size:12px;color:#9991a8}
+
+/* ANIMATION */
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:850px){
+.navlinks{display:none;position:absolute;top:82px;left:0;right:0;background:white;padding:25px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--border)}
+.navlinks.open{display:flex}
+.menu{display:block}
+.nav-btn{display:none}
+.hero-grid,.contact-grid{grid-template-columns:1fr}
+.contact-art{min-height:360px}
+.expect-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+.hero{padding:65px 0}
+.hero h1{letter-spacing:-2px}
+.contact-art{min-height:330px}
+.art-main{padding:24px;min-height:290px}
+.art-label.one{right:-4px}
+.art-label.two{left:-4px}
+.section{padding:65px 0}
+.form-card{padding:23px 18px}
+.form-grid,.expect-grid{grid-template-columns:1fr}
+.field.full{grid-column:auto}
+.footer-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+.reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container nav">
+<a href="index.html" class="logo">
+<svg viewBox="0 0 100 100" fill="none">
+<path d="M18 54 C18 9 78 2 88 38 C98 73 56 98 31 76 C14 61 24 31 51 29 C76 27 79 49 59 60 C45 68 31 58 18 58" stroke="#6739C1" stroke-width="9" stroke-linecap="round"/>
+</svg>
+<div>
+<div class="logo-name">ETERNEASE</div>
+<div class="logo-tag">DIGITAL AGENCY | IT CONSULTANTS</div>
+</div>
+</a>
+<button class="menu" onclick="toggleMenu()">☰</button>
+<nav class="navlinks" id="navlinks">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="portfolio.html">Portfolio</a>
+<a href="approach.html">Approach</a>
+<a href="contact.html" class="active">Contact</a>
+</nav>
+<a href="#contact-form" class="nav-btn">Let's Talk ↗</a>
+</div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+<div class="container hero-grid">
+<div>
+<div class="eyebrow">Let's connect</div>
+<h1>Have an idea?<br><span class="gradient">Let's talk.</span></h1>
+<p class="hero-copy">Whether you have a project in mind, need professional support or simply want to explore possibilities, we would be happy to hear from you.</p>
+<div class="hero-actions">
+<a href="#contact-form" class="btn">Start a Conversation ↗</a>
+<a href="services.html" class="btn-outline">Explore Services</a>
+</div>
+</div>
+
+<div class="contact-art">
+<div class="art-label one">Your next idea starts here</div>
+<div class="art-main">
+<div class="art-tag">ETERNEASE / CONNECTION</div>
+<div class="art-heading">Let's build<br>something<br>meaningful.</div>
+<p class="art-text">A conversation is the first step towards a clear plan and a thoughtful outcome.</p>
+<div class="art-bottom"><span>OPEN TO IDEAS</span><span>READY TO CONNECT ↗</span></div>
+<div class="art-orb"></div>
+</div>
+<div class="art-label two">Ideas into impactful work</div>
+</div>
+</div>
+</section>
+
+<!-- CONTACT FORM AND DETAILS -->
+<section class="section" id="contact-form">
+<div class="container">
+<div class="section-head reveal">
+<div class="eyebrow">Get in touch</div>
+<h2>Tell us what you<br><span class="gradient">have in mind.</span></h2>
+<p>Share a few details about your requirement. We will have a better understanding of what you need and how we can help.</p>
+</div>
+
+<div class="contact-grid">
+
+<div class="info-stack reveal">
+<div class="info-card">
+<div class="info-icon">✉</div>
+<div>
+<h3>Email Us</h3>
+<p><a href="mailto:Vanshtiwari543@gmail.com">Vanshtiwari543@gmail.com</a></p>
+</div>
+</div>
+
+<div class="info-card">
+<div class="info-icon">◎</div>
+<div>
+<h3>Instagram</h3>
+<p><a href="https://instagram.com/nonfilter_vansh?obrf=azdzeWlyMng3Ynpj&utm_source=qr" target="_blank" rel="noopener">Connect with us on Instagram ↗</a></p>
+</div>
+</div>
+
+<div class="info-card">
+<div class="info-icon">in</div>
+<div>
+<h3>LinkedIn</h3>
+<p>Connect with our team professionally.</p>
+</div>
+</div>
+
+<div class="info-note">
+<h3>Not sure where to start?</h3>
+<p>That's completely fine. Just tell us about your idea, challenge or requirement. We can start with a simple conversation and work out the next steps together.</p>
+</div>
+</div>
+
+<div class="form-card reveal">
+<div class="form-heading">
+<h2>Send an inquiry</h2>
+<p>Fill in the details below and tell us a little about your project.</p>
+</div>
+
+<form id="contactForm">
+<div class="form-grid">
+
+<div class="field">
+<label for="name">Your Name *</label>
+<input id="name" name="name" type="text" placeholder="Enter your name" required>
+</div>
+
+<div class="field">
+<label for="email">Email Address *</label>
+<input id="email" name="email" type="email" placeholder="Enter your email" required>
+</div>
+
+<div class="field">
+<label for="company">Company / Business</label>
+<input id="company" name="company" type="text" placeholder="Company name (optional)">
+</div>
+
+<div class="field">
+<label for="service">What do you need? *</label>
+<select id="service" name="service" required>
+<option value="">Select a service</option>
+<option>Website Design & Development</option>
+<option>Portfolio Website</option>
+<option>UI / UX Design</option>
+<option>Graphic Design & Editing</option>
+<option>Social Media Management</option>
+<option>Virtual Assistance & Admin Support</option>
+<option>Email Management</option>
+<option>IT Recruitment & Candidate Coordination</option>
+<option>IT Project Support & Coordination</option>
+<option>Technical Documentation</option>
+<option>Microsoft 365 Migration Support</option>
+<option>Content & Technical Writing</option>
+<option>Other / Not Sure Yet</option>
+</select>
+</div>
+
+<div class="field full">
+<label for="budget">Estimated Budget (Optional)</label>
+<select id="budget" name="budget">
+<option value="">Select a budget range (optional)</option>
+<option>Under $500</option>
+<option>$500 – $1,000</option>
+<option>$1,000 – $3,000</option>
+<option>$3,000 – $5,000</option>
+<option>$5,000+</option>
+<option>To be discussed</option>
+</select>
+</div>
+
+<div class="field full">
+<label for="message">Tell us about your requirement *</label>
+<textarea id="message" name="message" placeholder="Describe your project, goals, requirements or the kind of support you are looking for..." required></textarea>
+</div>
+
+</div>
+
+<button type="submit" class="submit-btn">Prepare My Inquiry ↗</button>
+<p class="form-footnote">Your email application will open with your inquiry details ready to send.</p>
+<div class="form-message" id="formMessage" role="status"></div>
+</form>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- WHAT TO EXPECT -->
+<section class="section expect-section">
+<div class="container">
+<div class="section-head reveal">
+<div class="eyebrow">What happens next</div>
+<h2>A simple start.<br><span class="gradient">A clear way forward.</span></h2>
+<p>We keep the initial conversation straightforward so that you know what to expect from the beginning.</p>
+</div>
+
+<div class="expect-grid">
+<div class="expect-card reveal">
+<div class="expect-number">01 / FIRST CONTACT</div>
+<h3>We understand your idea</h3>
+<p>We review your inquiry and understand the requirement, the challenge and the outcome you are looking for.</p>
+</div>
+<div class="expect-card reveal">
+<div class="expect-number">02 / DISCUSSION</div>
+<h3>We discuss the details</h3>
+<p>We clarify the important points, discuss expectations and identify the information needed to move forward.</p>
+</div>
+<div class="expect-card reveal">
+<div class="expect-number">03 / NEXT STEPS</div>
+<h3>We identify a direction</h3>
+<p>We explore a practical approach, relevant capabilities and possible next steps based on your requirement.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+<div class="container">
+<div class="eyebrow" style="color:#c6b4f5">Start somewhere</div>
+<h2>Good things begin<br>with a conversation.</h2>
+<p>You do not need every detail figured out. Share what you have in mind and let's explore how we can make it happen.</p>
+<a href="#contact-form">Tell Us About Your Project ↗</a>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div>
+<a href="index.html" class="logo">
+<svg viewBox="0 0 100 100" fill="none">
+<path d="M18 54 C18 9 78 2 88 38 C98 73 56 98 31 76 C14 61 24 31 51 29 C76 27 79 49 59 60 C45 68 31 58 18 58" stroke="#a68af2" stroke-width="9" stroke-linecap="round"/>
+</svg>
+<div>
+<div class="logo-name" style="color:white">ETERNEASE</div>
+<div class="logo-tag">DIGITAL AGENCY | IT CONSULTANTS</div>
+</div>
+</a>
+<p style="margin-top:18px;max-width:340px">A thoughtful approach to creative, digital and professional work.</p>
+</div>
+
+<div>
+<h3>Explore</h3><br>
+<a href="about.html">About Us</a>
+<a href="services.html">Services</a>
+<a href="portfolio.html">Portfolio</a>
+<a href="approach.html">Our Approach</a>
+</div>
+
+<div>
+<h3>Connect</h3><br>
+<a href="index.html">Home</a>
+<a href="mailto:Vanshtiwari543@gmail.com">Email Us</a>
+<a href="contact.html">Contact Us</a>
+</div>
+</div>
+
+<div class="footer-bottom">© <span id="year"></span> ETERNEASE. All Rights Reserved.</div>
+</div>
+</footer>
+
+<script>
+function toggleMenu(){
+document.getElementById('navlinks').classList.toggle('open');
+}
+
+document.getElementById('year').textContent=new Date().getFullYear();
+
+/* CONTACT FORM */
+document.getElementById('contactForm').addEventListener('submit',function(e){
+e.preventDefault();
+
+const name=document.getElementById('name').value.trim();
+const email=document.getElementById('email').value.trim();
+const company=document.getElementById('company').value.trim();
+const service=document.getElementById('service').value;
+const budget=document.getElementById('budget').value;
+const message=document.getElementById('message').value.trim();
+const notice=document.getElementById('formMessage');
+
+if(!name||!email||!service||!message){
+notice.style.display='block';
+notice.textContent='Please complete all required fields.';
+return;
+}
+
+const subject=encodeURIComponent('New Project Inquiry - '+name);
+const body=encodeURIComponent(
+'Hello ETERNEASE,\n\nI would like to discuss a project.\n\n'+
+'Name: '+name+'\n'+
+'Email: '+email+'\n'+
+'Company: '+(company||'Not provided')+'\n'+
+'Service: '+service+'\n'+
+'Budget: '+(budget||'Not specified')+'\n\n'+
+'Project Details:\n'+message+'\n\nThank you.'
+);
+
+notice.style.display='block';
+notice.textContent='Your email application is opening with the inquiry details. Please review and send your email.';
+window.location.href='mailto:Vanshtiwari543@gmail.com?subject='+subject+'&body='+body;
+});
+
+/* SCROLL REVEAL */
+const observer=new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('visible');
+observer.unobserve(entry.target);
+}
+});
+},{threshold:.12});
+
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>
