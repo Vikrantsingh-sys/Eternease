@@ -1,0 +1,820 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | ETERNEASE — Digital Agency & IT Consultants</title>
+<meta name="description" content="Explore the creative, technical, financial, operational and specialist capabilities of ETERNEASE.">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+ --purple:#6338c5;
+ --violet:#a48af0;
+ --ink:#211a30;
+ --muted:#777187;
+ --paper:#faf9fd;
+ --line:#e9e3f2;
+ --soft:#f1edfa;
+ --dark:#191324;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:105px}
+body{
+ font-family:'DM Sans',sans-serif;background:var(--paper);
+ color:var(--ink);line-height:1.7;overflow-x:hidden
+}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+h1,h2,h3,h4{font-family:Manrope,sans-serif;line-height:1.2;letter-spacing:-.7px}
+.container{width:min(1160px,92%);margin:auto}
+.gradient{
+ background:linear-gradient(100deg,#5a30b5,#a58cf0);
+ -webkit-background-clip:text;background-clip:text;color:transparent
+}
+header{
+ position:sticky;top:0;z-index:100;
+ background:#faf9fdf0;backdrop-filter:blur(18px);
+ border-bottom:1px solid var(--line)
+}
+.nav{height:79px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand svg{width:43px;height:43px}
+.brand strong{font:800 20px Manrope;letter-spacing:1px}
+.brand small{display:block;font-size:9px;letter-spacing:1px;color:var(--muted)}
+.navlinks{display:flex;align-items:center;gap:27px;font-size:13px;font-weight:700;color:#655e73}
+.navlinks a{transition:.25s}
+.navlinks a:hover,.navlinks a.active{color:var(--purple)}
+.navbtn{
+ background:var(--purple);color:white;border-radius:40px;
+ padding:12px 21px;font-size:12px;font-weight:700
+}
+.menu{display:none;background:none;border:0;font-size:25px;color:var(--purple)}
+.hero{
+ min-height:630px;display:flex;align-items:center;position:relative;
+ overflow:hidden;
+ background:
+ radial-gradient(ellipse at 85% 20%,#e9e0ff 0,transparent 37%),
+ radial-gradient(ellipse at 8% 90%,#eee8ff 0,transparent 38%)
+}
+.hero:before{
+ content:"";position:absolute;width:550px;height:550px;border:1px solid #bba9e955;
+ border-radius:50%;right:-130px;top:40px;animation:rotate 45s linear infinite
+}
+.hero:after{
+ content:"";position:absolute;width:390px;height:390px;border:1px solid #bba9e955;
+ border-radius:50%;right:-50px;top:120px;animation:rotate 30s linear infinite reverse
+}
+.hero-grid{
+ display:grid;grid-template-columns:1.1fr .9fr;gap:50px;
+ align-items:center;padding:100px 0;position:relative;z-index:2
+}
+.eyebrow{
+ font-size:11px;font-weight:800;letter-spacing:3px;
+ text-transform:uppercase;color:var(--purple);margin-bottom:19px
+}
+.hero h1{font-size:clamp(48px,7vw,82px);margin-bottom:25px}
+.hero p{font-size:17px;color:var(--muted);max-width:590px}
+.hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:33px}
+.btn{
+ display:inline-block;padding:14px 23px;border-radius:40px;
+ background:var(--purple);color:white;font-size:13px;font-weight:800;
+ transition:.3s;box-shadow:0 8px 25px #6338c522
+}
+.btn:hover{transform:translateY(-5px);box-shadow:0 15px 35px #6338c555}
+.btn.alt{background:white;color:var(--purple);border:1px solid var(--line);box-shadow:none}
+.hero-art{
+ height:410px;border-radius:35px;position:relative;overflow:hidden;
+ background:linear-gradient(145deg,#20172f,#49268c,#8c6bd5);
+ display:grid;place-items:center;box-shadow:0 30px 70px #32165b35
+}
+.hero-art:before,.hero-art:after{
+ content:"";position:absolute;border:1px solid #ffffff55;border-radius:50%;
+ width:290px;height:290px;animation:rotate 25s linear infinite
+}
+.hero-art:after{width:220px;height:220px;animation-duration:18s;animation-direction:reverse}
+.art-center{
+ width:105px;height:105px;border-radius:30px;transform:rotate(45deg);
+ background:#fff;display:grid;place-items:center;z-index:2;
+ box-shadow:0 0 60px #d5c1ff88
+}
+.art-center span{transform:rotate(-45deg);font:800 42px Manrope;color:var(--purple)}
+.float-tag{
+ position:absolute;z-index:3;background:#ffffffed;color:#38275b;
+ padding:12px 16px;border-radius:13px;font-size:11px;font-weight:800;
+ box-shadow:0 12px 35px #0003;animation:float 5s ease-in-out infinite
+}
+.float-tag.one{top:45px;left:25px}
+.float-tag.two{right:20px;bottom:90px;animation-delay:-2s}
+.float-tag.three{left:45px;bottom:35px;animation-delay:-3s}
+@keyframes rotate{to{transform:rotate(360deg)}}
+@keyframes float{50%{transform:translateY(-12px)}}
+
+.jumpbar{
+ position:relative;z-index:5;background:white;border-block:1px solid var(--line);
+ padding:16px 0
+}
+.jump-inner{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.jumpbar a{
+ border:1px solid var(--line);padding:9px 15px;border-radius:30px;
+ font-size:11px;font-weight:800;color:#635b73;transition:.25s
+}
+.jumpbar a:hover{background:var(--purple);color:white;box-shadow:0 0 20px #8d6cdd66}
+
+.section{padding:100px 0}
+.section-head{max-width:740px;margin-bottom:42px}
+.section-head h2{font-size:clamp(35px,5vw,57px);margin-bottom:17px}
+.section-head p{color:var(--muted);font-size:15px}
+.dark{
+ background:radial-gradient(ellipse at 90% 20%,#56358a,transparent 40%),var(--dark);
+ color:white;padding:85px 0;overflow:hidden
+}
+.dark .eyebrow{color:#c1a8ff}
+.dark p{color:#c9c0d7}
+.dark-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.dark h2{font-size:clamp(34px,5vw,53px)}
+.dark-quote{
+ border-left:2px solid #b99bff;padding:24px 30px;
+ font:700 25px Manrope;line-height:1.5
+}
+
+/* service navigation */
+.filter-label{font-size:11px;font-weight:800;letter-spacing:2px;color:var(--muted)}
+.category-nav{display:flex;gap:9px;flex-wrap:wrap;margin-top:17px}
+.category-nav button{
+ border:1px solid var(--line);background:white;color:#665c77;
+ padding:10px 16px;border-radius:30px;font-size:12px;font-weight:800;
+ transition:.25s
+}
+.category-nav button:hover,.category-nav button.selected{
+ background:var(--purple);color:white;border-color:var(--purple);
+ box-shadow:0 0 24px #8e6bdb55
+}
+
+/* service cards */
+.service-group{margin:60px 0 0;scroll-margin-top:110px}
+.group-heading{
+ display:flex;align-items:flex-end;justify-content:space-between;
+ gap:20px;padding-bottom:22px;border-bottom:1px solid var(--line);
+ margin-bottom:24px
+}
+.group-heading h2{font-size:clamp(30px,4vw,43px)}
+.group-heading p{font-size:12px;color:var(--muted);max-width:300px;text-align:right}
+.group-kicker{color:var(--purple);font-size:10px;font-weight:800;letter-spacing:2px;margin-bottom:9px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+.service-card{
+ position:relative;background:white;border:1px solid var(--line);
+ border-radius:19px;overflow:hidden;transition:border-color .3s,transform .3s,box-shadow .3s
+}
+.service-card:hover{
+ transform:translateY(-4px);border-color:#b69de9;
+ box-shadow:0 16px 40px #3b246c12
+}
+.service-card:before{
+ content:"";position:absolute;left:0;top:0;width:3px;height:0;
+ background:linear-gradient(var(--purple),#b69aff);transition:height .5s
+}
+.service-card:hover:before,.service-card[open]:before{height:100%}
+.service-card summary{
+ list-style:none;cursor:pointer;padding:24px 25px;
+ display:grid;grid-template-columns:47px 1fr 27px;align-items:center;gap:15px
+}
+.service-card summary::-webkit-details-marker{display:none}
+.service-icon{
+ width:45px;height:45px;border-radius:14px;
+ display:grid;place-items:center;background:#f0eaff;
+ color:var(--purple);font-size:20px
+}
+.service-card h3{font-size:17px;margin-bottom:5px}
+.service-card summary p{font-size:12px;color:var(--muted)}
+.plus{
+ width:27px;height:27px;border-radius:50%;background:#f2edfb;
+ color:var(--purple);display:grid;place-items:center;font-size:20px;
+ transition:.3s
+}
+.service-card[open] .plus{transform:rotate(45deg);background:var(--purple);color:white}
+.card-body{
+ padding:0 25px 24px 87px;color:var(--muted);
+ font-size:13px;animation:openCard .35s ease
+}
+.card-body>p{margin-bottom:14px}
+@keyframes openCard{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.subservice{
+ margin-top:10px;border:1px solid #eee8f7;border-radius:12px;overflow:hidden
+}
+.subservice summary{
+ padding:12px 14px;display:flex;justify-content:space-between;
+ align-items:center;gap:10px;cursor:pointer;list-style:none;
+ color:#3d3153;font-weight:700;font-size:12px
+}
+.subservice summary::-webkit-details-marker{display:none}
+.subservice summary:after{content:"＋";color:var(--purple);font-size:15px}
+.subservice[open] summary:after{content:"−"}
+.sub-body{
+ padding:0 15px 15px;font-size:12px;color:var(--muted);
+ animation:openCard .3s ease
+}
+.sub-body ul{padding-left:17px}
+.sub-body li{padding:3px 0}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.tags span{
+ background:#f3effb;border:1px solid #e8dff6;color:#6747a0;
+ border-radius:30px;padding:5px 9px;font-size:10px;font-weight:700
+}
+.notice{
+ background:#f4efff;border:1px solid #e6dafc;border-radius:15px;
+ padding:19px 22px;font-size:12px;color:#625475;margin-top:24px
+}
+
+/* founders */
+.founder-section{background:#f2eef9}
+.people-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.person{
+ background:white;border:1px solid var(--line);border-radius:21px;
+ padding:27px;transition:.3s
+}
+.person:hover{transform:translateY(-7px);box-shadow:0 18px 40px #35205b14}
+.person .avatar{
+ width:53px;height:53px;display:grid;place-items:center;border-radius:16px;
+ background:linear-gradient(135deg,#e8ddff,#f5f0ff);
+ color:var(--purple);font:800 21px Manrope;margin-bottom:19px
+}
+.person small{font-size:10px;font-weight:800;letter-spacing:2px;color:var(--purple)}
+.person h3{font-size:22px;margin:9px 0}
+.person p{font-size:12px;color:var(--muted)}
+.person a{display:inline-block;color:var(--purple);font-size:11px;font-weight:800;margin-top:16px}
+
+/* CTA & footer */
+.cta{
+ padding:90px 0;text-align:center;
+ background:radial-gradient(ellipse at center,#e7ddff,transparent 68%)
+}
+.cta h2{font-size:clamp(36px,5vw,58px);margin-bottom:17px}
+.cta p{max-width:590px;margin:0 auto 26px;color:var(--muted);font-size:14px}
+footer{background:#171321;color:white;padding:52px 0 20px}
+.footer-row{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+footer p{color:#aaa2b8;font-size:13px}
+footer a{color:#c8bed9;font-size:12px}
+.footer-bottom{border-top:1px solid #393344;margin-top:35px;padding-top:18px;font-size:11px;color:#a49caf}
+
+/* lightning click feedback */
+#flash{
+ position:fixed;z-index:9999;pointer-events:none;width:10px;height:10px;
+ border-radius:50%;background:#c5a7ff;opacity:0;
+ box-shadow:0 0 8px 4px #a887ff,0 0 25px 12px #8754e9,0 0 55px 20px #8754e966;
+ transform:translate(-50%,-50%) scale(.2)
+}
+#flash.active{animation:flash .55s ease-out}
+@keyframes flash{
+ 0%{opacity:1;transform:translate(-50%,-50%) scale(.2)}
+ 35%{opacity:1;transform:translate(-50%,-50%) scale(1.5)}
+ 100%{opacity:0;transform:translate(-50%,-50%) scale(3.5)}
+}
+.ripple{
+ position:fixed;z-index:9998;pointer-events:none;width:20px;height:20px;
+ border:1px solid #9364e8;border-radius:50%;transform:translate(-50%,-50%);
+ animation:ripple .65s ease-out forwards
+}
+@keyframes ripple{
+ to{width:100px;height:100px;opacity:0;border-width:2px}
+}
+.reveal{opacity:0;transform:translateY(25px);transition:.75s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.top{
+ position:fixed;right:22px;bottom:22px;z-index:50;
+ width:43px;height:43px;border:0;border-radius:50%;
+ background:var(--purple);color:white;font-size:19px;
+ box-shadow:0 8px 25px #5528b544;opacity:0;pointer-events:none;transition:.3s
+}
+.top.show{opacity:1;pointer-events:auto}
+@media(prefers-reduced-motion:reduce){
+ *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+ .reveal{opacity:1;transform:none}
+}
+@media(max-width:850px){
+ .hero-grid,.dark-grid{grid-template-columns:1fr}
+ .hero-art{height:340px}
+ .people-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+ .navlinks{
+  display:none;position:absolute;top:79px;left:0;right:0;
+  background:white;padding:22px;flex-direction:column;align-items:flex-start
+ }
+ .navlinks.open{display:flex}
+ .menu{display:block}
+ .navbtn{display:none}
+ .hero-grid{padding:70px 0}
+ .hero{min-height:auto}
+ .hero h1{font-size:49px}
+ .section{padding:70px 0}
+ .cards{grid-template-columns:1fr}
+ .group-heading{align-items:flex-start;flex-direction:column}
+ .group-heading p{text-align:left}
+ .card-body{padding-left:25px}
+ .people-grid{grid-template-columns:1fr}
+ .hero-art{height:310px}
+}
+</style>
+</head>
+
+<body>
+<div id="flash"></div>
+
+<header>
+ <div class="container nav">
+  <a href="index.html" class="brand">
+   <svg viewBox="0 0 100 100" fill="none">
+    <path d="M18 54 C18 9 78 2 88 38 C98 73 56 98 31 76 C14 61 24 31 51 29 C76 27 79 49 59 60 C45 68 31 58 18 58" stroke="#6739C1" stroke-width="9" stroke-linecap="round"/>
+   </svg>
+   <div><strong>ETERNEASE</strong><small>DIGITAL AGENCY | IT CONSULTANTS</small></div>
+  </a>
+  <button class="menu" aria-label="Open navigation" onclick="document.querySelector('.navlinks').classList.toggle('open')">☰</button>
+  <nav class="navlinks">
+   <a href="index.html">Home</a>
+   <a href="about.html">About Us</a>
+   <a href="services.html" class="active">Services</a>
+   <a href="index.html">Portfolio</a>
+   <a href="index.html">Contact</a>
+  </nav>
+  <a class="navbtn" href="#service-catalog">Explore Services ↗</a>
+ </div>
+</header>
+
+<main>
+
+<section class="hero">
+ <div class="container hero-grid">
+  <div class="reveal">
+   <div class="eyebrow">What we bring to the table</div>
+   <h1>Capabilities<br>without <span class="gradient">boundaries.</span></h1>
+   <p>Explore a broad range of professional capabilities across technology, digital creativity, finance, operations, media and specialist domains. Every discipline has its own focus, depth and perspective.</p>
+   <div class="hero-actions">
+    <a href="#service-catalog" class="btn">Explore the services ↓</a>
+    <a href="#people" class="btn alt">Meet the specialists</a>
+   </div>
+  </div>
+  <div class="hero-art reveal">
+   <div class="art-center"><span>E</span></div>
+   <div class="float-tag one">Digital & Technology</div>
+   <div class="float-tag two">Finance & Operations</div>
+   <div class="float-tag three">Creative & Specialist Skills</div>
+  </div>
+ </div>
+</section>
+
+<div class="jumpbar">
+ <div class="container jump-inner">
+  <a href="#larson">Audio & Creative</a>
+  <a href="#ministry">Ministry & Media</a>
+  <a href="#clinical">Anesthesia Expertise</a>
+  <a href="#ashish">Finance & Accounting</a>
+  <a href="#vihaan">Digital & IT</a>
+  <a href="#people">Our Specialists</a>
+ </div>
+</div>
+
+<section class="dark">
+ <div class="container dark-grid">
+  <div class="reveal">
+   <div class="eyebrow">A different kind of capability map</div>
+   <h2>One destination.<br><span class="gradient">Multiple disciplines.</span></h2>
+   <p style="margin-top:20px">Our service structure reflects the individual strengths represented within ETERNEASE. Explore each discipline, open the specialist areas and discover the capabilities behind them.</p>
+  </div>
+  <div class="dark-quote reveal">
+   "The right expertise matters.<br>The way it is applied matters even more."
+  </div>
+ </div>
+</section>
+
+<section class="section" id="service-catalog">
+ <div class="container">
+  <div class="section-head reveal">
+   <div class="eyebrow">The service catalogue</div>
+   <h2>Explore every layer of <span class="gradient">expertise.</span></h2>
+   <p>Choose a discipline to jump directly to its section. Open the main cards to explore individual services, then open the smaller sections for more detail.</p>
+  </div>
+
+  <div class="filter-label">JUMP TO A DISCIPLINE</div>
+  <div class="category-nav reveal">
+   <button class="selected" onclick="goTo('larson',this)">Audio & AI</button>
+   <button onclick="goTo('design',this)">Design</button>
+   <button onclick="goTo('ministry',this)">Content & Ministry</button>
+   <button onclick="goTo('clinical',this)">Anesthesia</button>
+   <button onclick="goTo('ashish',this)">Finance</button>
+   <button onclick="goTo('vihaan',this)">Digital & IT</button>
+  </div>
+
+  <!-- LARSON -->
+  <div class="service-group" id="larson">
+   <div class="group-heading reveal">
+    <div><div class="group-kicker">01 / LARSON DHABHI</div><h2>Audio, AI & <span class="gradient">Creative Technology</span></h2></div>
+    <p>Audio workflows, emerging tools, visual communication and digital content production.</p>
+   </div>
+   <div class="cards">
+
+    <details class="service-card reveal">
+     <summary><span class="service-icon">🎧</span><span><h3>Audio Engineering & AI Voice</h3><p>Audio production, voice workflows and AI-assisted audio.</p></span><span class="plus">+</span></summary>
+     <div class="card-body">
+      <p>Audio-focused workflows that combine technical preparation, voice tools and creative production.</p>
+      <details class="subservice"><summary>Audio engineering</summary><div class="sub-body"><ul><li>Audio preparation and production workflows</li><li>Audio quality review and refinement</li><li>Voice and sound asset organisation</li><li>Production workflow troubleshooting</li></ul></div></details>
+      <details class="subservice"><summary>AI voice workflows</summary><div class="sub-body"><ul><li>ElevenLabs voice workflow preparation</li><li>Voice-ready script formatting</li><li>AI voice generation workflow planning</li><li>Voice output review and refinement</li></ul></div></details>
+      <details class="subservice"><summary>AI-assisted audio production</summary><div class="sub-body"><ul><li>AI tool selection and testing</li><li>Audio production assistance</li><li>Workflow experimentation</li><li>Quality evaluation</li></ul></div></details>
+     </div>
+    </details>
+
+    <details class="service-card reveal" id="ai-research">
+     <summary><span class="service-icon">🤖</span><span><h3>AI Research & Prompt Engineering</h3><p>Tool research, testing, evaluation and prompt development.</p></span><span class="plus">+</span></summary>
+     <div class="card-body">
+      <p>Exploring AI tools and developing practical workflows for creative and research requirements.</p>
+      <details class="subservice"><summary>AI tools research and evaluation</summary><div class="sub-body"><ul><li>AI product and platform research</li><li>Tool testing and comparison</li><li>Feature evaluation</li><li>Use-case identification</li><li>AI news research for media and content</li></ul></div></details>
+      <details class="subservice"><summary>Prompt engineering</summary><div class="sub-body"><ul><li>Structured prompt creation</li><li>Image-generation prompts</li><li>Content-generation prompts</li><li>Prompt refinement and iteration</li><li>Reusable prompt workflow development</li></ul></div></details>
+      <details class="subservice"><summary>AI-assisted content production</summary><div class="sub-body"><ul><li>Research-supported content workflows</li><li>AI-assisted ideation</li><li>Content drafting and refinement</li><li>Human review and quality checks</li></ul></div></details>
+     </div>
+    </details>
+
+   </div>
+  </div>
+
+  <!-- DESIGN -->
+  <div class="service-group" id="design">
+   <div class="group-heading reveal">
+    <div><div class="group-kicker">02 / VISUAL COMMUNICATION</div><h2>Design & <span class="gradient">Visual Content</span></h2></div>
+    <p>Visual concepts, digital creatives, layout development and image-focused workflows.</p>
+   </div>
+   <div class="cards">
+
+    <details class="service-card reveal">
+     <summary><span class="service-icon">🎨</span><span><h3>Graphic Design & Creative Direction</h3><p>Visual design, layouts, posters and brand-support assets.</p></span><span class="plus">+</span></summary>
+     <div class="card-body">
+      <p>Visual communication designed around the purpose, audience and context of each project.</p>
+      <details class="subservice"><summary>Canva design</summary><div class="sub-body"><ul><li>Canva-based creative development</li><li>Presentation and document layouts</li><li>Digital promotional material</li><li>Reusable visual templates</li></ul></div></details>
+      <details class="subservice"><summary>Poster and social-media design</summary><div class="sub-body"><ul><li>Social-media posts and graphics</li><li>Promotional posters</li><li>Campaign and announcement creatives</li><li>Platform-specific visual layouts</li></ul></div></details>
+      <details class="subservice"><summary>Visual direction and design briefs</summary><div class="sub-body"><ul><li>Creative references and visual direction</li><li>Design briefs</li><li>Layout planning</li><li>Visual consistency guidance</li></ul></div></details>
+      <details class="subservice"><summary>Basic branding and layouts</summary><div class="sub-body"><ul><li>Basic brand-support material</li><li>Typography and layout selection</li><li>Visual identity concepts</li><li>Design consistency review</li></ul></div></details>
+     </div>
+    </details>
+
+    <details class="service-card reveal">
+     <summary><span class="service-icon">✨</span><span><h3>Image Editing & AI Visuals</h3><p>Image-generation concepts, editing and visual refinement.</p></span><span class="plus">+</span></summary>
+     <div class="card-body">
+      <details class="subservice"><summary>Image-generation prompting</summary><div class="sub-body"><ul><li>Image-generation prompt writing</li><li>Visual concept development</li><li>Composition and style direction</li><li>Prompt testing and refinement</li></ul></div></details>
+      <details class="subservice"><summary>Image editing and enhancement</summary><div class="sub-body"><ul><li>Image editing and retouching concepts</li><li>Image upscaling workflows</li><li>Visual redesign concepts</li><li>Image quality review</li></ul></div></details>
+      <details class="subservice"><summary>Christian and event creatives</summary><div class="sub-body"><ul><li>Church event posters</li><li>Christian event announcements</li><li>Faith-based visual communication</li><li>Event-specific design briefs</li></ul></div></details>
+     </div>
+    </details>
+
+   </div>
+  </div>
+
+  <!-- CONTENT & MINISTRY -->
+  <div class="service-group" id="ministry">
+   <div class="group-heading reveal">
+    <div><div class="group-kicker">03 / MEDIA & COMMUNICATION</div><h2>Content, Media & <span class="gradient">Ministry</span></h2></div>
+    <p>Script development, short-form content, devotional communication and educational material.</p>
+   </div>
+   <div class="cards">
+
+    <details class="service-card reveal">
+     <summary><span class="service-icon">📱</span><span><h3>Digital Content & Script Development</h3><p>YouTube, short-form content, scripts and voice-over preparation.</p></span><span class="plus">+</span></summary>
+     <div class="card-body">
+      <details class="subservice"><summary>YouTube and script development</summary><div class="sub-body"><ul><li>Video topic research</li><li>YouTube script development</li><li>Script structure and storytelling</li><li>Content planning and outlines</li></ul></div></details>
+      <details class="subservice"><summary>Short-form content</summary><div class="sub-body"><ul><li>Short-form video concepts</li><li>Reels and short-video scripts</li><li>Content hooks and structure</li><li>Platform-oriented content ideas</li></ul></div></details>
+      <details class="subservice"><summary>Voice-over preparation</summary><div class="sub-body"><ul><li>Voice-over script preparation</li><li>ElevenLabs-ready script formatting</li><li>Pronunciation and pacing notes</li><li>Voice delivery preparation</li></ul></div></details>
+      <details class="subservice"><summary>Research and social content</summary><div class="sub-body"><ul><li>Content research</li><li>Social-media content planning</li><li>Research-backed content outlines</li><li>Editorial organisation</li></ul></div></details>
+     </div>
+    </details>
+
+    <details class="service-card reveal">
+     <summary><span class="service-icon">✝️</span><span><h3>Christian & Spiritual Content</h3><p>Bible study, devotional material and faith-based communication.</p></span><span class="plus">+</span></summary>
+     <div class="card-body">
+      <p>A specialist content area focused on Christian educational, spiritual and community communication.</p>
+      <details class="subservice"><summary>Bible and Gospel research</summary><div class="sub-body"><ul><li>Bible study material</li><li>Bible and Gospel research</li><li>Christian educational content</li><li>Faith-based research and outlines</li></ul></div></details>
+      <details class="subservice"><summary>Catholic liturgy and feast days</summary><div class="sub-body"><ul><li>Catholic liturgical research</li><li>Feast-day content preparation</li><li>Liturgical information organisation</li><li>Educational and explanatory material</li></ul></div></details>
+      <details class="subservice"><summary>Prayer and devotional content</summary><div class="sub-body"><ul><li>Prayer content preparation</li><li>Devotional writing</li><li>Spiritual reflections</li><li>Faith-based media scripts</li></ul></div></details>
+      <details class="subservice"><summary>Youth ministry and church communication</summary><div class="sub-body"><ul><li>Youth ministry content support</li><li>Church event communication</li><li>Christian event design concepts</li><li>Community announcements and creatives</li></ul></div></details>
+     </div>
+    </details>
+
+   </div>
+  </div>
+
+  <!-- OPERATIONS -->
+  <div class="service-group" id="operations">
+   <div class="group-heading reveal">
+    <div><div class="group-kicker">04 / STRUCTURE & SUPPORT</div><h2>Documentation & <span class="gradient">Operations</span></h2></div>
+    <p>Organised records, operational coordination, research and administrative support.</p>
+   </div>
+   <div class="cards">
+    <details class="service-card reveal">
+     <summary><span class="service-icon">📊</span><span><h3>Documentation & Data Organisation</h3><p>Reports, trackers, spreadsheets and project records.</p></span><span class="plus">+</span></summary>
+     <div class="card-body">
+      <details class="subservice"><summary>Project documentation and reports</summary><div class="sub-body"><ul><li>Project documentation</li><li>Structured reports</li><li>Progress and status records</li><li>Engineering-related documentation</li></ul></div></details>
+      <details class="subservice"><summary>Excel and spreadsheet work</summary><div class="sub-body"><ul><li>Tracking sheets</li><li>Spreadsheet organisation</li><li>Data entry and structuring</li><li>Data validation and review</li></ul></div></details>
+      <details class="subservice"><summary>Research and testing records</summary><div class="sub-body"><ul><li>Research documentation</li><li>Testing observations</li><li>Information comparison</li><li>Findings and record organisation</li></ul></div></details>
+     </div>
+    </details>
+
+    <details class="service-card reveal">
+     <summary><span class="service-icon">⚙️</span><span><h3>Administrative & Process Support</h3><p>HR assistance, process coordination and technical troubleshooting.</p></span><span class="plus">+</span></summary>
+     <div class="card-body">
+      <details class="subservice"><summary>HR and administrative work</summary><div class="sub-body"><ul><li>Administrative coordination</li><li>HR-related support</li><li>Record maintenance</li><li>Information organisation</li></ul></div></details>
+      <details class="subservice"><summary>Process management</summary><div class="sub-body"><ul><li>Process tracking</li><li>Workflow organisation</li><li>Task coordination</li><li>Operational follow-up</li></ul></div></details>
+      <details class="subservice"><summary>Technical troubleshooting</summary><div class="sub-body"><ul><li>Basic technical issue investigation</li><li>Problem documentation</li><li>Research-based troubleshooting</li><li>Engineering-related support records</li></ul></div></details>
+     </div>
+    </details>
+   </div>
+  </div>
+
+  <!-- ANESTHESIA -->
+  <div class="service-group" id="clinical">
+   <div class="group-heading reveal">
+    <div><div class="group-kicker">05 / PROFESSIONAL SPECIALIST EXPERTISE</div><h2>Anesthesia & <span class="gradient">OT Expertise</span></h2></div>
+    <p>Professional experience areas covering anesthesia equipment, operating-room preparation, monitoring and team coordination.</p>
+   </div>
+   <div class="cards">
+
+    <details class="service-card reveal">
+     <summary><span class="service-icon">🏥</span><span><h3>Anesthesia Equipment & OT Preparation</h3><p>Workstation setup, machine checks and operating-room readiness.</p></span><span class="plus">+</span></summary>
+     <div class="card-body">
+      <details class="subservice"><summary>Anesthesia workstation and equipment</summary><div class="sub-body"><ul><li>Anesthesia workstation setup and operation</li><li>Pre-anesthesia equipment preparation</li><li>Anesthesia machine checks</li><li>Breathing-system checks</li><li>Ventilation mode knowledge</li></ul></div></details>
+      <details class="subservice"><summary>Operating-room preparation</summary><div class="sub-body"><ul><li>Pre-operative OT preparation</li><li>Emergency OT preparation</li><li>Equipment and consumable readiness</li><li>Coordination with OT teams</li></ul></div></details>
+      <details class="subservice"><summary>Biomedical equipment coordination</summary><div class="sub-body"><ul><li>Equipment issue identification</li><li>Maintenance coordination</li><li>Daily equipment checks</li><li>Availability of critical supplies</li></ul></div></details>
+     </div>
+    </details>
+
+    <details class="service-card reveal">
+     <summary><span class="service-icon">📈</span><span><h3>Patient Monitoring & Airway Assistance</h3><p>Monitoring parameters, BIS systems and airway support experience.</p></span><span class="plus">+</span></summary>
+     <div class="card-body">
+      <details class="subservice"><summary>Patient monitoring</summary><div class="sub-body"><ul><li>Patient monitoring and interpretation of parameters</li><li>BIS monitoring</li><li>BIS sensor management</li><li>Monitoring standards awareness</li></ul></div></details>
+      <details class="subservice"><summary>Airway management assistance</summary><div class="sub-body"><ul><li>Airway management assistance</li><li>Assistance during difficult-airway cases</li><li>Equipment preparation</li><li>Emergency readiness</li></ul></div></details>
+      <details class="subservice"><summary>Procedure-related experience</summary><div class="sub-body"><ul><li>Assistance during general anesthesia</li><li>Assistance during regional anesthesia</li><li>Emergency anesthesia support</li><li>Knowledge of cardiac and neurosurgical OT procedures</li></ul></div></details>
+     </div>
+    </details>
+
+    <details class="service-card reveal">
+     <summary><span class="service-icon">🚨</span><span><h3>Emergency & Critical-OT Readiness</h3><p>Emergency preparation, rapid response and equipment troubleshooting.</p></span><span class="plus">+</span></summary>
+     <div class="card-body">
+      <details class="subservice"><summary>Emergency preparedness</summary><div class="sub-body"><ul><li>Managing emergency OT requirements</li><li>Rapid preparation of anesthesia equipment</li><li>Handling multiple emergency cases</li><li>Readiness for unexpected situations</li></ul></div></details>
+      <details class="subservice"><summary>Equipment troubleshooting</summary><div class="sub-body"><ul><li>Identifying equipment issues during procedures</li><li>Coordinating troubleshooting and maintenance</li><li>Maintaining emergency equipment readiness</li></ul></div></details>
+      <details class="subservice"><summary>Professional working practices</summary><div class="sub-body"><ul><li>Working efficiently under pressure</li><li>Taking responsibility for assigned tasks</li><li>Working independently when required</li><li>Multidisciplinary team coordination</li></ul></div></details>
+     </div>
+    </details>
+
+    <details class="service-card reveal">
+     <summary><span class="service-icon">🛡️</span><span><h3>Patient Safety & Perioperative Practices</h3><p>Safety protocols, medication awareness and procedure support.</p></span><span class="plus">+</span></summary>
+     <div class="card-body">
+      <details class="subservice"><summary>Safety and protocol awareness</summary><div class="sub-body"><ul><li>Adherence to anesthesia safety protocols</li><li>Pre-procedure equipment safety checks</li><li>Emergency preparedness</li><li>Patient-monitoring standards awareness</li><li>Medication and equipment safety awareness</li></ul></div></details>
+      <details class="subservice"><summary>Drugs and consumables handling experience</summary><div class="sub-body"><ul><li>Preparation and handling of anesthesia drugs and consumables</li><li>Narcotic and controlled-drug documentation</li><li>Inventory and record maintenance</li><li>Safety-focused documentation</li></ul></div></details>
+      <details class="subservice"><summary>Additional perioperative experience</summary><div class="sub-body"><ul><li>Blood transfusion technique experience</li><li>VAC dressing assistance</li><li>Perioperative patient-safety practices</li></ul></div></details>
+     </div>
+    </details>
+
+    <details class="service-card reveal">
+     <summary><span class="service-icon">📦</span><span><h3>Department, Inventory & Team Coordination</h3><p>Equipment inventory, junior staff guidance and OT workflow.</p></span><span class="plus">+</span></summary>
+     <div class="card-body">
+      <details class="subservice"><summary>Equipment and inventory management</summary><div class="sub-body"><ul><li>Anesthesia equipment maintenance and daily checks</li><li>Emergency-cart checking</li><li>BIS sensor and consumable inventory</li><li>Critical anesthesia supply availability</li><li>Biomedical equipment coordination</li></ul></div></details>
+      <details class="subservice"><summary>Department setup and team leadership</summary><div class="sub-body"><ul><li>Setting up an anesthesia department from the beginning</li><li>Training and guiding junior anesthesia staff</li><li>Coordinating with anesthesiologists, surgeons, nurses and OT staff</li><li>Managing OT workflow</li><li>Departmental task ownership</li></ul></div></details>
+      <details class="subservice"><summary>Additional technical knowledge</summary><div class="sub-body"><ul><li>Computer proficiency</li><li>Basic Python automation knowledge</li><li>Browser and mobile-device automation concepts</li><li>Familiarity with LambdaTest</li><li>Automated testing concepts</li></ul></div></details>
+     </div>
+    </details>
+   </div>
+   <div class="notice">Professional expertise profile: These items describe an individual's professional knowledge and experience. ETERNEASE is not presenting itself as a hospital, medical provider or clinical treatment service. Clinical work remains subject to appropriate qualifications, authorisation and healthcare protocols.</div>
+  </div>
+
+  <!-- ASHISH -->
+  <div class="service-group" id="ashish">
+   <div class="group-heading reveal">
+    <div><div class="group-kicker">06 / ASHISH</div><h2>Finance, Accounting & <span class="gradient">Compliance</span></h2></div>
+    <p>Accounting systems, GST and tax workflows, reconciliations and financial reporting.</p>
+   </div>
+   <div class="cards">
+
+    <details class="service-card reveal">
+     <summary><span class="service-icon">📚</span><span><h3>Bookkeeping & Accounting</h3><p>Accounting records, ledgers, invoices and financial statements.</p></span><span class="plus">+</span></summary>
+     <div class="card-body">
+      <details class="subservice"><summary>Accounting software</summary><div class="sub-body"><ul><li>Tally ERP</li><li>Tally Prime</li><li>Zoho Books</li><li>Bookkeeping and accounting records</li></ul></div></details>
+      <details class="subservice"><summary>Invoice and ledger accounting</summary><div class="sub-body"><ul><li>Purchase invoice accounting</li><li>Sales invoice accounting</li><li>Ledger scrutiny</li><li>Vendor reconciliation</li><li>Customer reconciliation</li></ul></div></details>
+      <details class="subservice"><summary>Financial statements</summary><div class="sub-body"><ul><li>Trial balance preparation</li><li>Profit and Loss account</li><li>Balance sheet preparation</li><li>Debtors and creditors management</li><li>Outstanding reports</li></ul></div></details>
+      <details class="subservice"><summary>Asset and inventory accounting</summary><div class="sub-body"><ul><li>Fixed assets accounting</li><li>Inventory accounting</li><li>Inventory reconciliation</li><li>Expense and payment tracking</li></ul></div></details>
+     </div>
+    </details>
+
+    <details class="service-card reveal">
+     <summary><span class="service-icon">🧾</span><span><h3>GST Reconciliation & Compliance</h3><p>GST records, return preparation and reconciliation workflows.</p></span><span class="plus">+</span></summary>
+     <div class="card-body">
+      <details class="subservice"><summary>GST reconciliation</summary><div class="sub-body"><ul><li>GST reconciliation with GSTR-2B</li><li>Purchase data reconciliation</li><li>Input tax credit record review</li><li>Ledger and return data checks</li></ul></div></details>
+      <details class="subservice"><summary>GST return preparation</summary><div class="sub-body"><ul><li>GSTR-1 preparation</li><li>GSTR-3B preparation</li><li>GST return preparation and filing</li><li>Supporting data organisation</li></ul></div></details>
+      <details class="subservice"><summary>GST documentation</summary><div class="sub-body"><ul><li>GST records maintenance</li><li>Invoice data organisation</li><li>Reconciliation documentation</li><li>Compliance-related record preparation</li></ul></div></details>
+     </div>
+    </details>
+
+    <details class="service-card reveal">
+     <summary><span class="service-icon">📑</span><span><h3>TDS & Income Tax Support</h3><p>TDS calculations, return preparation and income-tax documentation.</p></span><span class="plus">+</span></summary>
+     <div class="card-body">
+      <details class="subservice"><summary>TDS management</summary><div class="sub-body"><ul><li>TDS calculation</li><li>TDS deduction and payment</li><li>TDS return preparation and filing</li><li>Form 26AS reconciliation</li><li>AIS reconciliation</li></ul></div></details>
+      <details class="subservice"><summary>TRACES and correction work</summary><div class="sub-body"><ul><li>TDS correction work</li><li>TRACES-related work</li><li>TDS record checking</li><li>Correction documentation</li></ul></div></details>
+      <details class="subservice"><summary>Income tax preparation</summary><div class="sub-body"><ul><li>Income Tax Return preparation</li><li>Basic income-tax compliance support</li><li>Income-tax notice documentation and handling support</li><li>Supporting financial record organisation</li></ul></div></details>
+     </div>
+    </details>
+
+    <details class="service-card reveal">
+     <summary><span class="service-icon">📈</span><span><h3>Financial Analysis, MIS & Payroll</h3><p>Excel analysis, financial reporting, payroll and audit preparation.</p></span><span class="plus">+</span></summary>
+     <div class="card-body">
+      <details class="subservice"><summary>Excel and financial data</summary><div class="sub-body"><ul><li>Advanced Excel</li><li>VLOOKUP and XLOOKUP</li><li>Pivot tables and filters</li><li>Bank statement analysis</li><li>Financial data analysis</li></ul></div></details>
+      <details class="subservice"><summary>MIS and management reports</summary><div class="sub-body"><ul><li>MIS reports</li><li>Outstanding reports</li><li>Expense tracking</li><li>Payment tracking</li><li>Financial reporting support</li></ul></div></details>
+      <details class="subservice"><summary>Payroll and audit support</summary><div class="sub-body"><ul><li>Payroll and salary accounting</li><li>Audit data preparation</li><li>Client data management</li><li>Financial documentation and record maintenance</li></ul></div></details>
+      <details class="subservice"><summary>MCA and ROC work</summary><div class="sub-body"><ul><li>Basic MCA-related compliance work</li><li>Basic ROC-related compliance work</li><li>Corporate documentation organisation</li></ul></div></details>
+     </div>
+    </details>
+
+   </div>
+  </div>
+
+  <!-- VIHAAN -->
+  <div class="service-group" id="vihaan">
+   <div class="group-heading reveal">
+    <div><div class="group-kicker">07 / VIHAAN</div><h2>Digital, IT & <span class="gradient">Business Support</span></h2></div>
+    <p>Digital experiences, recruitment coordination, business support and technical project delivery.</p>
+   </div>
+   <div class="cards">
+
+    <details class="service-card reveal">
+     <summary><span class="service-icon">💻</span><span><h3>Website Design & Development</h3><p>Business websites, portfolio websites and web maintenance.</p></span><span class="plus">+</span></summary>
+     <div class="card-body">
+      <details class="subservice"><summary>Business website development</summary><div class="sub-body"><ul><li>Business website planning</li><li>Website design and development</li><li>Responsive page layouts</li><li>Business information architecture</li><li>Website updates and maintenance</li></ul></div></details>
+      <details class="subservice"><summary>Portfolio website development</summary><div class="sub-body"><ul><li>Personal portfolio websites</li><li>Professional profile presentation</li><li>Project showcase sections</li><li>Portfolio content organisation</li></ul></div></details>
+      <details class="subservice"><summary>Web design and technical updates</summary><div class="sub-body"><ul><li>Website structure and navigation</li><li>UI-focused layout implementation</li><li>Content updates</li><li>Basic website troubleshooting</li></ul></div></details>
+     </div>
+    </details>
+
+    <details class="service-card reveal">
+     <summary><span class="service-icon">🖌️</span><span><h3>UI Design, Editing & Graphic Design</h3><p>Interface layouts, digital graphics and visual editing.</p></span><span class="plus">+</span></summary>
+     <div class="card-body">
+      <details class="subservice"><summary>UI design</summary><div class="sub-body"><ul><li>Interface layout concepts</li><li>Page structure and visual hierarchy</li><li>Navigation and usability considerations</li><li>Responsive design concepts</li></ul></div></details>
+      <details class="subservice"><summary>Editing and graphic design</summary><div class="sub-body"><ul><li>Graphic design and editing</li><li>Digital promotional creatives</li><li>Image and visual content refinement</li><li>Presentation-ready visual assets</li></ul></div></details>
+      <details class="subservice"><summary>AI-assisted design</summary><div class="sub-body"><ul><li>AI-assisted content and design workflows</li><li>Visual prompting</li><li>Creative ideation</li><li>Design refinement</li></ul></div></details>
+     </div>
+    </details>
+
+    <details class="service-card reveal">
+     <summary><span class="service-icon">👥</span><span><h3>US IT Recruitment & Interview Support</h3><p>Recruitment coordination, candidate sourcing and interview assistance.</p></span><span class="plus">+</span></summary>
+     <div class="card-body">
+      <details class="subservice"><summary>US IT recruitment</summary><div class="sub-body"><ul><li>US IT recruitment support</li><li>Candidate sourcing and screening</li><li>Resume review and submission coordination</li><li>Recruitment pipeline updates</li><li>Candidate communication</li></ul></div></details>
+      <details class="subservice"><summary>Interview support</summary><div class="sub-body"><ul><li>Interview scheduling and coordination</li><li>Interview preparation support</li><li>Calendar and availability coordination</li><li>Interview status follow-up</li></ul></div></details>
+      <details class="subservice"><summary>Recruitment administration</summary><div class="sub-body"><ul><li>Candidate documentation</li><li>Recruitment tracking</li><li>Consultant and stakeholder coordination</li><li>Process and status reporting</li></ul></div></details>
+     </div>
+    </details>
+
+    <details class="service-card reveal">
+     <summary><span class="service-icon">🗂️</span><span><h3>Virtual Assistance & Administrative Support</h3><p>Email management, scheduling, records and everyday coordination.</p></span><span class="plus">+</span></summary>
+     <div class="card-body">
+      <details class="subservice"><summary>Virtual assistance</summary><div class="sub-body"><ul><li>Day-to-day administrative assistance</li><li>Task organisation and tracking</li><li>Information management</li><li>Operational follow-up</li></ul></div></details>
+      <details class="subservice"><summary>Email management</summary><div class="sub-body"><ul><li>Email organisation</li><li>Inbox and communication support</li><li>Drafting and follow-up assistance</li><li>Professional correspondence</li></ul></div></details>
+      <details class="subservice"><summary>Social media management</summary><div class="sub-body"><ul><li>Social-media content coordination</li><li>Post planning and scheduling support</li><li>Content organisation</li><li>Basic account activity coordination</li></ul></div></details>
+     </div>
+    </details>
+
+    <details class="service-card reveal">
+     <summary><span class="service-icon">📋</span><span><h3>IT Project Support & Documentation</h3><p>Project coordination, technical writing and structured documentation.</p></span><span class="plus">+</span></summary>
+     <div class="card-body">
+      <details class="subservice"><summary>IT project support</summary><div class="sub-body"><ul><li>IT project coordination support</li><li>Task and milestone tracking</li><li>Stakeholder communication</li><li>Project status updates</li></ul></div></details>
+      <details class="subservice"><summary>Project management support</summary><div class="sub-body"><ul><li>Project planning assistance</li><li>Action-item tracking</li><li>Meeting and follow-up coordination</li><li>Project record organisation</li></ul></div></details>
+      <details class="subservice"><summary>Documentation and technical writing</summary><div class="sub-body"><ul><li>Project documentation</li><li>Technical writing</li><li>Process documents</li><li>Business and operational documentation</li><li>Content writing and editing</li></ul></div></details>
+     </div>
+    </details>
+
+   </div>
+  </div>
+
+ </div>
+</section>
+
+<!-- PEOPLE -->
+<section class="section founder-section" id="people">
+ <div class="container">
+  <div class="section-head reveal">
+   <div class="eyebrow">The people behind the capabilities</div>
+   <h2>Different strengths.<br><span class="gradient">Individual expertise.</span></h2>
+   <p>Explore the professional areas represented by the people associated with ETERNEASE.</p>
+  </div>
+  <div class="people-grid">
+   <div class="person reveal">
+    <div class="avatar">LD</div>
+    <small>FOUNDER</small>
+    <h3>Larson Dhabhi</h3>
+    <p>Audio engineering, AI voice workflows, creative technology, design, content, ministry communication and specialist professional experience.</p>
+    <a href="#larson">Explore Larson's expertise ↗</a>
+   </div>
+   <div class="person reveal">
+    <div class="avatar">A</div>
+    <small>CO-FOUNDER</small>
+    <h3>Ashish</h3>
+    <p>Accounting, bookkeeping, GST and TDS workflows, financial reporting, reconciliation and compliance support.</p>
+    <a href="#ashish">Explore Ashish's expertise ↗</a>
+   </div>
+   <div class="person reveal">
+    <div class="avatar">V</div>
+    <small>CO-FOUNDER</small>
+    <h3>Vihaan</h3>
+    <p>Website development, recruitment, project support, digital design, administration and technical documentation.</p>
+    <a href="#vihaan">Explore Vihaan's expertise ↗</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="cta">
+ <div class="container reveal">
+  <div class="eyebrow">Have a requirement?</div>
+  <h2>Let's find the right <span class="gradient">expertise.</span></h2>
+  <p>Every requirement is different. Explore our capabilities and connect with ETERNEASE when you are ready to discuss a project or professional requirement.</p>
+  <a class="btn" href="index.html">Back to ETERNEASE ↗</a>
+ </div>
+</section>
+
+</main>
+
+<footer>
+ <div class="container">
+  <div class="footer-row">
+   <div>
+    <div class="brand">
+     <svg viewBox="0 0 100 100" fill="none">
+      <path d="M18 54 C18 9 78 2 88 38 C98 73 56 98 31 76 C14 61 24 31 51 29 C76 27 79 49 59 60 C45 68 31 58 18 58" stroke="#a68af2" stroke-width="9" stroke-linecap="round"/>
+     </svg>
+     <div><strong style="color:white">ETERNEASE</strong><small style="color:#aaa2b8">DIGITAL AGENCY | IT CONSULTANTS</small></div>
+    </div>
+    <p style="margin-top:14px">Different expertise. One connected identity.</p>
+   </div>
+   <div><p>EXPLORE</p><br><a href="index.html">Home</a><br><a href="about.html">About Us</a><br><a href="services.html">Services</a></div>
+   <div><p>DISCOVER</p><br><a href="#larson">Creative & AI</a><br><a href="#ashish">Finance</a><br><a href="#vihaan">Digital & IT</a></div>
+  </div>
+  <div class="footer-bottom">© <span id="year"></span> ETERNEASE. All Rights Reserved.</div>
+ </div>
+</footer>
+
+<button class="top" id="top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+
+/* Scroll reveal */
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{
+  if(entry.isIntersecting){
+   entry.target.classList.add('visible');
+   observer.unobserve(entry.target);
+  }
+ });
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+/* Click lightning and glow */
+const flash=document.getElementById('flash');
+document.addEventListener('click',e=>{
+ const target=e.target.closest('a,button,summary');
+ if(!target)return;
+ flash.style.left=e.clientX+'px';
+ flash.style.top=e.clientY+'px';
+ flash.classList.remove('active');
+ void flash.offsetWidth;
+ flash.classList.add('active');
+ const ripple=document.createElement('span');
+ ripple.className='ripple';
+ ripple.style.left=e.clientX+'px';
+ ripple.style.top=e.clientY+'px';
+ document.body.appendChild(ripple);
+ setTimeout(()=>ripple.remove(),700);
+});
+
+/* Category jump buttons */
+function goTo(id,button){
+ document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'});
+ document.querySelectorAll('.category-nav button').forEach(b=>b.classList.remove('selected'));
+ button.classList.add('selected');
+}
+
+/* Back-to-top visibility */
+const topButton=document.getElementById('top');
+window.addEventListener('scroll',()=>{
+ topButton.classList.toggle('show',window.scrollY>550);
+},{passive:true});
+
+/* Close mobile menu after navigation */
+document.querySelectorAll('.navlinks a').forEach(a=>{
+ a.addEventListener('click',()=>document.querySelector('.navlinks').classList.remove('open'));
+});
+
+/* Keep nested service details independent */
+document.querySelectorAll('.subservice').forEach(item=>{
+ item.addEventListener('toggle',()=>{
+  if(item.open){
+   item.closest('.service-card').open=true;
+  }
+ });
+});
+</script>
+</body>
+</html>
