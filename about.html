@@ -158,9 +158,7 @@ border-radius:20px;padding:28px;transition:.35s
 .value p{font-size:14px;color:var(--muted)}
 
 .feature-list{display:grid;grid-template-columns:1fr 1fr;gap:40px}
-.feature{
-padding:30px 0;border-bottom:1px solid var(--border);
-}
+.feature{padding:30px 0;border-bottom:1px solid var(--border);}
 .feature h3{font-size:20px;margin-bottom:10px}
 .feature p{font-size:14px;color:var(--muted)}
 .feature span{color:var(--purple);font-size:12px;font-weight:800}
@@ -251,17 +249,16 @@ background:white;padding:25px;flex-direction:column
 <nav class="navlinks">
 <a href="index.html">Home</a>
 <a href="about.html" style="color:#5528b5">About Us</a>
-<a href="index.html">Services</a>
-<a href="index.html">Portfolio</a>
-<a href="index.html">Contact</a>
+<a href="services.html">Services</a>
+<a href="portfolio.html">Portfolio</a>
+<a href="contact.html">Contact</a>
 </nav>
-<a class="pill" href="index.html">Explore ETERNEASE ↗</a>
+<a class="pill" href="contact.html">Explore ETERNEASE ↗</a>
 </div>
 </header>
 
 <main>
 
-<!-- HERO -->
 <section class="hero">
 <div class="container hero-grid">
 <div class="reveal">
@@ -287,7 +284,6 @@ background:white;padding:25px;flex-direction:column
 </div>
 </section>
 
-<!-- IDENTITY -->
 <section class="section" id="identity">
 <div class="container">
 <div class="intro-grid reveal">
@@ -311,7 +307,6 @@ background:white;padding:25px;flex-direction:column
 </div>
 </section>
 
-<!-- PHILOSOPHY -->
 <section class="dark" id="philosophy">
 <div class="container dark-grid">
 <div class="reveal">
@@ -328,7 +323,6 @@ background:white;padding:25px;flex-direction:column
 </div>
 </section>
 
-<!-- VALUES -->
 <section class="section">
 <div class="container">
 <div class="eyebrow">03 / What guides us</div>
@@ -344,7 +338,6 @@ background:white;padding:25px;flex-direction:column
 </div>
 </section>
 
-<!-- CULTURE -->
 <section class="section" style="background:#f1edfa">
 <div class="container">
 <div class="eyebrow">04 / Our working culture</div>
@@ -358,7 +351,6 @@ background:white;padding:25px;flex-direction:column
 </div>
 </section>
 
-<!-- EXPANDABLE POINTS -->
 <section class="section">
 <div class="container">
 <div class="eyebrow">05 / Understand us better</div>
@@ -434,7 +426,6 @@ background:white;padding:25px;flex-direction:column
 </div>
 </section>
 
-<!-- CLOSING -->
 <section class="banner">
 <div class="container reveal">
 <div class="eyebrow">The ETERNEASE perspective</div>
@@ -461,12 +452,12 @@ background:white;padding:25px;flex-direction:column
 <div>
 <p>EXPLORE</p><br>
 <a href="index.html">Home</a><br>
-<a href="index.html">Services</a><br>
-<a href="index.html">Portfolio</a>
+<a href="services.html">Services</a><br>
+<a href="portfolio.html">Portfolio</a>
 </div>
 <div>
 <p>CONNECT</p><br>
-<a href="index.html">Contact</a><br>
+<a href="contact.html">Contact</a><br>
 <a href="#identity">Our identity</a>
 </div>
 </div>
@@ -488,7 +479,6 @@ observer.unobserve(entry.target);
 
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
-// Smooth expandable sections
 document.querySelectorAll('.expand').forEach(item=>{
 item.addEventListener('toggle',()=>{
 if(item.open){
