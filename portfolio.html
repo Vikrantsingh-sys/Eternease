@@ -69,7 +69,13 @@ background:
 radial-gradient(ellipse at 85% 15%,#e5dcff,transparent 42%),
 radial-gradient(ellipse at 5% 90%,#f0eaff,transparent 40%);
 }
-.hero-content{max-width:850px}
+.hero .container{
+display:grid;
+grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);
+align-items:center;
+gap:35px;
+}
+.hero-content{max-width:850px;position:relative;z-index:2}
 .eyebrow{
 color:var(--purple);font-size:11px;
 letter-spacing:3px;font-weight:800;
@@ -91,6 +97,127 @@ margin-top:38px;
 }
 .stat strong{display:block;font:800 27px Manrope;color:var(--purple)}
 .stat span{font-size:12px;color:var(--muted)}
+
+/* PREMIUM ANIMATED HERO VISUAL */
+.hero-art{
+min-height:450px;
+position:relative;
+display:grid;
+place-items:center;
+isolation:isolate;
+}
+.hero-orbit{
+position:absolute;
+width:330px;
+height:330px;
+border:1px solid #b9a1ed;
+border-radius:50%;
+animation:orbitRotate 22s linear infinite;
+}
+.hero-orbit:before,
+.hero-orbit:after{
+content:"";
+position:absolute;
+border:1px solid #cbbaf0;
+border-radius:50%;
+inset:30px;
+}
+.hero-orbit:after{
+inset:65px;
+border-style:dashed;
+animation:orbitRotate 16s linear infinite reverse;
+}
+.hero-core{
+width:175px;
+height:175px;
+border-radius:50%;
+background:radial-gradient(circle at 35% 30%,#fff,#e8dcff 45%,#a98be9 100%);
+box-shadow:0 0 45px #9473ee66,0 0 100px #9473ee35;
+display:grid;
+place-items:center;
+position:relative;
+animation:coreFloat 4s ease-in-out infinite;
+}
+.hero-core svg{
+width:90px;
+height:90px;
+filter:drop-shadow(0 5px 12px #5428b544);
+}
+.hero-core:after{
+content:"";
+position:absolute;
+inset:-13px;
+border:1px solid #a98be9;
+border-radius:50%;
+animation:corePulse 3s ease-out infinite;
+}
+.orbit-dot{
+position:absolute;
+width:13px;
+height:13px;
+border-radius:50%;
+background:#7445ce;
+box-shadow:0 0 20px #7445ce;
+}
+.dot-one{top:45px;left:65px}
+.dot-two{right:18px;top:155px;background:#b28bff}
+.dot-three{bottom:38px;left:110px;background:#5428b5}
+.hero-chip{
+position:absolute;
+z-index:3;
+padding:13px 18px;
+background:#ffffffd9;
+backdrop-filter:blur(15px);
+border:1px solid #e2d8f7;
+border-radius:14px;
+box-shadow:0 12px 35px #3b236515;
+font-size:12px;
+font-weight:800;
+color:#5428b5;
+letter-spacing:.4px;
+animation:chipFloat 5s ease-in-out infinite;
+}
+.chip-one{top:35px;right:8px}
+.chip-two{bottom:55px;right:0;animation-delay:1s}
+.chip-three{top:48%;left:-5px;animation-delay:2s}
+.chip-four{bottom:20px;left:25px;animation-delay:1.5s}
+.hero-chip span{
+display:block;
+font-size:9px;
+font-weight:500;
+color:#837895;
+margin-top:3px;
+}
+.hero-glow{
+position:absolute;
+width:380px;
+height:380px;
+border-radius:50%;
+background:#cbb8ff;
+filter:blur(90px);
+opacity:.22;
+z-index:-1;
+animation:glowMove 7s ease-in-out infinite alternate;
+}
+@keyframes orbitRotate{
+to{transform:rotate(360deg)}
+}
+@keyframes coreFloat{
+0%,100%{transform:translateY(0) scale(1)}
+50%{transform:translateY(-13px) scale(1.035)}
+}
+@keyframes corePulse{
+0%{transform:scale(.9);opacity:.8}
+100%{transform:scale(1.5);opacity:0}
+}
+@keyframes chipFloat{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-12px)}
+}
+@keyframes glowMove{
+from{transform:translate(-20px,-10px)}
+to{transform:translate(25px,20px)}
+}
 
 /* TEAM INTRO */
 .team-section{padding:85px 0}
@@ -268,6 +395,13 @@ align-items:flex-start;border-bottom:1px solid var(--border);
 .navlinks.open{display:flex}
 .menu{display:block}
 .nav-btn{display:none}
+.hero .container{
+grid-template-columns:1fr;
+}
+.hero-art{
+min-height:390px;
+margin-top:20px;
+}
 .profile-layout{grid-template-columns:180px 1fr;gap:22px}
 .work-grid{grid-template-columns:repeat(2,1fr)}
 }
@@ -275,6 +409,23 @@ align-items:flex-start;border-bottom:1px solid var(--border);
 .hero{padding:65px 0}
 .hero h1{letter-spacing:-2px}
 .hero-stats{gap:24px}
+.hero-art{
+min-height:320px;
+transform:scale(.88);
+margin:-5px 0;
+}
+.hero-orbit{
+width:270px;
+height:270px;
+}
+.hero-core{
+width:145px;
+height:145px;
+}
+.hero-chip{
+font-size:10px;
+padding:10px 12px;
+}
 .profile summary{
 grid-template-columns:78px 1fr;
 gap:14px;padding:17px;
@@ -337,6 +488,45 @@ gap:14px;padding:17px;
 <div class="stat"><strong>01</strong><span>Collaborative team</span></div>
 </div>
 </div>
+
+<!-- ANIMATED HERO VISUAL -->
+<div class="hero-art" aria-hidden="true">
+<div class="hero-glow"></div>
+
+<div class="hero-orbit">
+<i class="orbit-dot dot-one"></i>
+<i class="orbit-dot dot-two"></i>
+<i class="orbit-dot dot-three"></i>
+</div>
+
+<div class="hero-core">
+<svg viewBox="0 0 100 100" fill="none">
+<path d="M18 54 C18 9 78 2 88 38 C98 73 56 98 31 76 C14 61 24 31 51 29 C76 27 79 49 59 60 C45 68 31 58 18 58"
+stroke="#6739C1" stroke-width="8" stroke-linecap="round"/>
+</svg>
+</div>
+
+<div class="hero-chip chip-one">
+CREATIVE
+<span>Ideas & Production</span>
+</div>
+
+<div class="hero-chip chip-two">
+TECHNOLOGY
+<span>Digital Solutions</span>
+</div>
+
+<div class="hero-chip chip-three">
+FINANCE
+<span>Business Operations</span>
+</div>
+
+<div class="hero-chip chip-four">
+PEOPLE
+<span>Expertise & Collaboration</span>
+</div>
+</div>
+
 </div>
 </section>
 
